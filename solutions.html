@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solutions - Rivetz Digital 2.0</title>
+  <style>
+    :root {
+      --primary: #F26A30;
+      --primary-dark: #D65929;
+      --secondary: #F7941D;
+      --light: #FFFFFF;
+      --dark: #2C3E50;
+      --gray: #95A5A6;
+      --background: #F8F9FA;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: var(--background);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    header {
+      background-color: var(--light);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      width: 120px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo svg {
+      width: 100%;
+      height: 100%;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    nav a:hover,
+    nav a.active {
+      color: var(--primary);
+    }
+    
+    .page-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: var(--light);
+      padding: 80px 20px;
+      text-align: center;
+    }
+    
+    .page-hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    
+    .page-hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+    
+    .solution-section {
+      padding: 80px 20px;
+    }
+    
+    .solution-section:nth-child(even) {
+      background-color: var(--light);
+    }
+    
+    .solution-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    .solution-section:nth-child(even) .solution-content {
+      direction: rtl;
+    }
+    
+    .solution-section:nth-child(even) .solution-text {
+      direction: ltr;
+    }
+    
+    .solution-visual {
+      background-color: rgba(242, 106, 48, 0.1);
+      border-radius: 20px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      color: var(--primary);
+    }
+    
+    .solution-text h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    
+    .solution-text p {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+    
+    .feature-list {
+      list-style: none;
+      margin: 30px 0;
+    }
+    
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+    
+    .feature-list li::before {
+      content: '✓';
+      color: var(--primary);
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--primary);
+      color: var(--light);
+      padding: 14px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    
+    .btn-secondary {
+      background-color: var(--light);
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    
+    .industries-section {
+      padding: 80px 20px;
+      background-color: var(--dark);
+      color: var(--light);
+    }
+    
+    .industries-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .industries-content h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+    
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+    
+    .industry-card {
+      background-color: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    
+    .industry-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .industry-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: var(--secondary);
+    }
+    
+    .industry-card h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+    
+    .cta-section {
+      padding: 80px 20px;
+      background-color: var(--primary);
+      color: var(--light);
+      text-align: center;
+    }
+    
+    .cta-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .cta-content h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    
+    .cta-content p {
+      font-size: 18px;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+    
+    footer {
+      background-color: var(--dark);
+      color: var(--light);
+      padding: 60px 20px 30px;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+    
+    .footer-col h4 {
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+    
+    .footer-col ul {
+      list-style: none;
+    }
+    
+    .footer-col li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-col a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    .footer-col a:hover {
+      color: var(--light);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      opacity: 0.7;
+    }
+    
+    @media (max-width: 968px) {
+      .solution-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .solution-section:nth-child(even) .solution-content {
+        direction: ltr;
+      }
+      
+      .solution-visual {
+        height: 300px;
+      }
+      
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="250" cy="250" r="240" fill="#F7941D"/>
+          <circle cx="250" cy="250" r="200" fill="#F26A30"/>
+          <path d="M150 380V120h105c55 0 100 45 100 100 0 30-15 55-35 70l60 90h-70l-45-70h-45v70h-70zm70-130h35c20 0 35-15 35-35s-15-35-35-35h-35v70z" fill="#FFFFFF"/>
+        </svg>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="solutions.html" class="active">Solutions</a></li>
+          <li><a href="#">RvT Token</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="whitepaper.html">White Paper</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <section class="page-hero">
+    <h1>Digital 2.0 Solutions</h1>
+    <p>Practical applications of trusted computing, blockchain, and cryptographic validation for your business needs</p>
+  </section>
+  
+  <section class="solution-section">
+    <div class="solution-content">
+      <div class="solution-visual">🤖</div>
+      <div class="solution-text">
+        <h2>Certified AI</h2>
+        <p>As AI transforms our world, manufactured data needs provable origin. Rivetz technology ensures AI-generated content has verifiable source information and system state validation.</p>
+        <ul class="feature-list">
+          <li>Verify AI model integrity at time of output</li>
+          <li>Attach origin data to AI-manufactured content</li>
+          <li>Track and authenticate AI system state</li>
+          <li>Link output directly to manufacturer with verifiable chain</li>
+        </ul>
+        <a href="whitepaper.html#applications" class="btn">Learn More</a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="solution-section">
+    <div class="solution-content">
+      <div class="solution-visual">💳</div>
+      <div class="solution-text">
+        <h2>Secure Wallets & Messaging</h2>
+        <p>Built on state-of-the-art hardware wallets with policy bound to keys, Rivetz provides decentralized control systems selected by the owner.</p>
+        <ul class="feature-list">
+          <li>Hardware-secured transactions</li>
+          <li>Policy enforcement through manifest of controls</li>
+          <li>Evidence for peer-to-peer transactions</li>
+          <li>Compliance verification with privacy</li>
+        </ul>
+        <a href="#" class="btn">Explore Wallet Security</a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="solution-section">
+    <div class="solution-content">
+      <div class="solution-visual">💬</div>
+      <div class="solution-text">
+        <h2>Social Media with Origin Data</h2>
+        <p>Partnering with emerging platforms to enable advanced hardware assurance, proving ownership and managing reputation.</p>
+        <ul class="feature-list">
+          <li>End fake accounts with hardware verification</li>
+          <li>Ensure content posted is content intended</li>
+          <li>Maintain anonymous accounts with verified control</li>
+          <li>Record controls on blockchain for global validation</li>
+        </ul>
+        <a href="#" class="btn">View Social Solutions</a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="solution-section">
+    <div class="solution-content">
+      <div class="solution-visual">💻</div>
+      <div class="solution-text">
+        <h2>Device Origin & Integrity</h2>
+        <p>Using trusted computing standards to ensure devices have not been tampered with, validating BIOS integrity and reference measurements from manufacturers.</p>
+        <ul class="feature-list">
+          <li>Automated FCC Trustmark compliance</li>
+          <li>Verify device integrity at procurement</li>
+          <li>Track device state throughout lifecycle</li>
+          <li>Ensure manufactured data has known origin</li>
+        </ul>
+        <a href="#" class="btn">Explore Device Security</a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="industries-section">
+    <div class="industries-content">
+      <h2>Industries We Serve</h2>
+      <div class="industries-grid">
+        <div class="industry-card">
+          <div class="industry-icon">🏦</div>
+          <h3>Financial Services</h3>
+          <p>Secure transactions, compliance verification, and fraud prevention for banks and fintech</p>
+        </div>
+        
+        <div class="industry-card">
+          <div class="industry-icon">🏥</div>
+          <h3>Healthcare</h3>
+          <p>Patient data protection, medical device security, and regulatory compliance</p>
+        </div>
+        
+        <div class="industry-card">
+          <div class="industry-icon">🏭</div>
+          <h3>Manufacturing</h3>
+          <p>Supply chain integrity, IoT security, and production quality assurance</p>
+        </div>
+        
+        <div class="industry-card">
+          <div class="industry-icon">🏛️</div>
+          <h3>Government</h3>
+          <p>Secure communications, identity verification, and regulatory enforcement</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Ready to Implement Digital 2.0?</h2>
+      <p>Contact our team to discuss how Rivetz solutions can transform your security infrastructure with provable cybersecurity controls.</p>
+      <a href="#" class="btn btn-secondary">Schedule a Consultation</a>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Journey</a></li>
+            <li><a href="#">Leadership</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Technology</h4>
+          <ul>
+            <li><a href="#">GAIN Platform</a></li>
+            <li><a href="#">Manifest of Controls</a></li>
+            <li><a href="#">Attestation</a></li>
+            <li><a href="#">Digital Authorities</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="#">Certified AI</a></li>
+            <li><a href="#">Secure Messaging</a></li>
+            <li><a href="#">Social Media</a></li>
+            <li><a href="#">Device Integrity</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">White Papers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Developer Docs</a></li>
+            <li><a href="#">RvT Token</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        © 2025 Rivetz. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technology - Rivetz Digital 2.0</title>
+  <style>
+    :root {
+      --primary: #F26A30;
+      --primary-dark: #D65929;
+      --secondary: #F7941D;
+      --light: #FFFFFF;
+      --dark: #2C3E50;
+      --gray: #95A5A6;
+      --background: #F8F9FA;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: var(--background);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    header {
+      background-color: var(--light);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      width: 120px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo svg {
+      width: 100%;
+      height: 100%;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    nav a:hover {
+      color: var(--primary);
+    }
+    
+    .page-hero {
+      background: linear-gradient(135deg, var(--dark) 0%, #34495E 100%);
+      color: var(--light);
+      padding: 80px 20px;
+      text-align: center;
+    }
+    
+    .page-hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    
+    .page-hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+    
+    .gain-section {
+      padding: 80px 20px;
+      background-color: var(--light);
+    }
+    
+    .gain-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .gain-intro {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .gain-intro h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    
+    .gain-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 40px;
+    }
+    
+    .gain-feature {
+      background-color: var(--light);
+      border: 1px solid rgba(242, 106, 48, 0.2);
+      border-radius: 12px;
+      padding: 40px;
+      transition: transform 0.3s;
+    }
+    
+    .gain-feature:hover {
+      transform: translateY(-5px);
+    }
+    
+    .gain-icon {
+      width: 60px;
+      height: 60px;
+      background-color: rgba(242, 106, 48, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    
+    .gain-feature h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    
+    .gain-feature p {
+      margin-bottom: 20px;
+    }
+    
+    .gain-feature ul {
+      list-style: none;
+    }
+    
+    .gain-feature li {
+      padding-left: 25px;
+      position: relative;
+      margin-bottom: 10px;
+    }
+    
+    .gain-feature li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+    
+    .architecture-section {
+      padding: 80px 20px;
+      background-color: var(--background);
+    }
+    
+    .architecture-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .architecture-content h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 60px;
+    }
+    
+    .architecture-visual {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+    
+    .arch-component {
+      text-align: center;
+      padding: 30px 15px;
+      background-color: var(--light);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    
+    .arch-component:hover {
+      transform: translateY(-10px);
+    }
+    
+    .arch-icon {
+      width: 80px;
+      height: 80px;
+      background-color: rgba(242, 106, 48, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 32px;
+    }
+    
+    .arch-component h4 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    
+    .arch-component p {
+      font-size: 14px;
+      color: var(--gray);
+    }
+    
+    .manifest-section {
+      padding: 80px 20px;
+      background-color: var(--light);
+    }
+    
+    .manifest-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .manifest-content h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 60px;
+    }
+    
+    .manifest-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    
+    .manifest-card {
+      background-color: var(--background);
+      border-radius: 12px;
+      padding: 40px;
+      text-align: center;
+    }
+    
+    .manifest-number {
+      width: 60px;
+      height: 60px;
+      background-color: var(--primary);
+      color: var(--light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    
+    .manifest-card h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+    
+    .hardware-section {
+      padding: 80px 20px;
+      background-color: var(--dark);
+      color: var(--light);
+    }
+    
+    .hardware-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .hardware-content h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 60px;
+    }
+    
+    .hardware-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+    
+    .hardware-item {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    
+    .hardware-item:hover {
+      transform: translateY(-5px);
+    }
+    
+    .hardware-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+    
+    .hardware-item h4 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    
+    .hardware-item p {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    
+    .quantum-section {
+      padding: 80px 20px;
+      background-color: var(--primary);
+      color: var(--light);
+      text-align: center;
+    }
+    
+    .quantum-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .quantum-content h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    
+    .quantum-content p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--light);
+      color: var(--primary);
+      padding: 14px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    
+    footer {
+      background-color: var(--dark);
+      color: var(--light);
+      padding: 60px 20px 30px;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+    
+    .footer-col h4 {
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+    
+    .footer-col ul {
+      list-style: none;
+    }
+    
+    .footer-col li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-col a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    .footer-col a:hover {
+      color: var(--light);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      opacity: 0.7;
+    }
+    
+    @media (max-width: 768px) {
+      .gain-features {
+        grid-template-columns: 1fr;
+      }
+      
+      .architecture-visual {
+        grid-template-columns: 1fr;
+      }
+      
+      .manifest-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="250" cy="250" r="240" fill="#F7941D"/>
+          <circle cx="250" cy="250" r="200" fill="#F26A30"/>
+          <path d="M150 380V120h105c55 0 100 45 100 100 0 30-15 55-35 70l60 90h-70l-45-70h-45v70h-70zm70-130h35c20 0 35-15 35-35s-15-35-35-35h-35v70z" fill="#FFFFFF"/>
+        </svg>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="technology.html" class="active">Technology</a></li>
+          <li><a href="#">Solutions</a></li>
+          <li><a href="#">RvT Token</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="whitepaper.html">White Paper</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <section class="page-hero">
+    <h1>The Technology Behind Digital 2.0</h1>
+    <p>Combining trusted computing, blockchain, and cryptographic proof to establish a provable, tamper-proof framework for digital interactions</p>
+  </section>
+  
+  <section class="gain-section">
+    <div class="gain-content">
+      <div class="gain-intro">
+        <h2>Global Attestation and Identity Network (GAIN)</h2>
+        <p>A transformative approach that combines trusted computing, blockchain technology, and tokenization to establish a provable, tamper-proof framework for devices and digital interactions.</p>
+      </div>
+      
+      <div class="gain-features">
+        <div class="gain-feature">
+          <div class="gain-icon">🔍</div>
+          <h3>Provable Device Origin</h3>
+          <p>Every device in the GAIN ecosystem is uniquely identifiable, ensuring that only known and authorized systems can participate in digital transactions.</p>
+          <ul>
+            <li>Hardware-based cryptographic attestation</li>
+            <li>Strong digital identifiers</li>
+            <li>Unparalleled verification confidence</li>
+          </ul>
+        </div>
+        
+        <div class="gain-feature">
+          <div class="gain-icon">⚖️</div>
+          <h3>Decentralized Compliance Automation</h3>
+          <p>Automates compliance by recording validated controls and verifications immutably on the blockchain. Devices are continuously monitored and attested, proving that policies and controls are being enforced at all times.</p>
+          <ul>
+            <li>Immutable compliance records</li>
+            <li>Real-time policy enforcement</li>
+            <li>Automated validation processes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="architecture-section">
+    <div class="architecture-content">
+      <h2>The Architecture of Digital 2.0</h2>
+      
+      <div class="architecture-visual">
+        <div class="arch-component">
+          <div class="arch-icon">🛡️</div>
+          <h4>Hardware-Based Security</h4>
+          <p>TPM, TEE, iSIM, HSM foundations</p>
+        </div>
+        
+        <div class="arch-component">
+          <div class="arch-icon">✓</div>
+          <h4>Attestation</h4>
+          <p>Real-time integrity verification</p>
+        </div>
+        
+        <div class="arch-component">
+          <div class="arch-icon">✉️</div>
+          <h4>Secure Instructions</h4>
+          <p>Cryptographically signed messages</p>
+        </div>
+        
+        <div class="arch-component">
+          <div class="arch-icon">🔑</div>
+          <h4>Digital Authorities</h4>
+          <p>Verifiable trust relationships</p>
+        </div>
+        
+        <div class="arch-component">
+          <div class="arch-icon">🔬</div>
+          <h4>Validation</h4>
+          <p>Evidence creation and verification</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="manifest-section">
+    <div class="manifest-content">
+      <h2>The Manifest of Controls</h2>
+      
+      <div class="manifest-grid">
+        <div class="manifest-card">
+          <div class="manifest-number">1</div>
+          <h3>Local Environment Controls</h3>
+          <p>Third-party software validates the health and integrity of the owner's digital system, from antivirus to BIOS integrity tests.</p>
+        </div>
+        
+        <div class="manifest-card">
+          <div class="manifest-number">2</div>
+          <h3>User Consent Controls</h3>
+          <p>Bridge to the physical world ensuring interactions are authorized with valid credentials and proper consent mechanisms.</p>
+        </div>
+        
+        <div class="manifest-card">
+          <div class="manifest-number">3</div>
+          <h3>Remote Policy Services</h3>
+          <p>Third-party controls like KYC or OFAC validation, providing signed responses to assure authenticity of policy execution.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="hardware-section">
+    <div class="hardware-content">
+      <h2>Hardware-Based Security</h2>
+      
+      <div class="hardware-grid">
+        <div class="hardware-item">
+          <div class="hardware-icon">💻</div>
+          <h4>TPM</h4>
+          <p>Trusted Platform Module for hardware-based key protection and secure boot validation</p>
+        </div>
+        
+        <div class="hardware-item">
+          <div class="hardware-icon">🔒</div>
+          <h4>TEE</h4>
+          <p>Trusted Execution Environment providing secure enclaves for sensitive operations</p>
+        </div>
+        
+        <div class="hardware-item">
+          <div class="hardware-icon">📱</div>
+          <h4>iSIM</h4>
+          <p>Integrated SIM for hardware-protected device authentication</p>
+        </div>
+        
+        <div class="hardware-item">
+          <div class="hardware-icon">🔑</div>
+          <h4>HSM</h4>
+          <p>Hardware Security Modules for enterprise cryptographic operations</p>
+        </div>
+        
+        <div class="hardware-item">
+          <div class="hardware-icon">⚡</div>
+          <h4>Secure Cores</h4>
+          <p>Protected GPU/TPU processing for AI and cryptographic workloads</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="quantum-section">
+    <div class="quantum-content">
+      <h2>Quantum-Resistant Security</h2>
+      <p>Rivetz ensures future-proof security by integrating with quantum-resistant cryptography and post-quantum attestation mechanisms, protecting your digital assets against tomorrow's threats.</p>
+      <a href="whitepaper.html" class="btn">Learn More About Our Technology</a>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Journey</a></li>
+            <li><a href="#">Leadership</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Technology</h4>
+          <ul>
+            <li><a href="#">GAIN Platform</a></li>
+            <li><a href="#">Manifest of Controls</a></li>
+            <li><a href="#">Attestation</a></li>
+            <li><a href="#">Digital Authorities</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="#">Certified AI</a></li>
+            <li><a href="#">Secure Messaging</a></li>
+            <li><a href="#">Social Media</a></li>
+            <li><a href="#">Device Integrity</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">White Papers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Developer Docs</a></li>
+            <li><a href="#">RvT Token</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        © 2025 Rivetz. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

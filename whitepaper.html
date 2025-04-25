@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>White Paper - Rivetz Digital 2.0</title>
+  <style>
+    :root {
+      --primary: #F26A30;
+      --primary-dark: #D65929;
+      --secondary: #F7941D;
+      --light: #FFFFFF;
+      --dark: #2C3E50;
+      --gray: #95A5A6;
+      --background: #F8F9FA;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: var(--background);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    header {
+      background-color: var(--light);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      width: 120px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo svg {
+      width: 100%;
+      height: 100%;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    nav a:hover,
+    nav a.active {
+      color: var(--primary);
+    }
+    
+    .whitepaper-hero {
+      background: linear-gradient(135deg, var(--dark) 0%, #34495E 100%);
+      color: var(--light);
+      padding: 60px 20px;
+      text-align: center;
+    }
+    
+    .whitepaper-hero h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+    
+    .whitepaper-hero p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      opacity: 0.9;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--primary);
+      color: var(--light);
+      padding: 14px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    
+    .whitepaper-content {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      background-color: var(--light);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    
+    .whitepaper-content section {
+      padding: 40px;
+    }
+    
+    .whitepaper-content h2 {
+      font-size: 32px;
+      color: var(--primary);
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid var(--primary);
+    }
+    
+    .whitepaper-content h3 {
+      font-size: 24px;
+      color: var(--dark);
+      margin: 30px 0 15px;
+    }
+    
+    .whitepaper-content p {
+      margin-bottom: 20px;
+      font-size: 18px;
+      color: var(--dark);
+    }
+    
+    .whitepaper-content ul,
+    .whitepaper-content ol {
+      margin: 20px 0 20px 40px;
+    }
+    
+    .whitepaper-content li {
+      margin-bottom: 10px;
+    }
+    
+    .whitepaper-toc {
+      background-color: var(--background);
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 40px;
+    }
+    
+    .whitepaper-toc h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+    
+    .whitepaper-toc ul {
+      list-style: none;
+      margin: 0;
+    }
+    
+    .whitepaper-toc ul li {
+      margin-bottom: 10px;
+    }
+    
+    .whitepaper-toc a {
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .whitepaper-toc a:hover {
+      color: var(--primary);
+    }
+    
+    .version-info {
+      font-size: 14px;
+      color: var(--gray);
+      margin-bottom: 30px;
+    }
+    
+    footer {
+      background-color: var(--dark);
+      color: var(--light);
+      padding: 60px 20px 30px;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+    
+    .footer-col h4 {
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+    
+    .footer-col ul {
+      list-style: none;
+    }
+    
+    .footer-col li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-col a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    .footer-col a:hover {
+      color: var(--light);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      opacity: 0.7;
+    }
+    
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+      
+      .whitepaper-content {
+        padding: 20px;
+      }
+      
+      .whitepaper-content section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="250" cy="250" r="240" fill="#F7941D"/>
+          <circle cx="250" cy="250" r="200" fill="#F26A30"/>
+          <path d="M150 380V120h105c55 0 100 45 100 100 0 30-15 55-35 70l60 90h-70l-45-70h-45v70h-70zm70-130h35c20 0 35-15 35-35s-15-35-35-35h-35v70z" fill="#FFFFFF"/>
+        </svg>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="token.html">RvT Token</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="whitepaper.html" class="active">White Paper</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <section class="whitepaper-hero">
+    <h1>Rivetz Whitepaper 3.11</h1>
+    <p>Cybersecurity for Decentralized Systems</p>
+    <a href="rivetz-whitepaper-3.11.pdf" class="btn" download>Download PDF Version</a>
+  </section>
+  
+  <div class="whitepaper-content">
+    <section>
+      <div class="version-info">
+        Version 3.11 | March 2025<br>
+        Prepared by: The Rivetz Team<br>
+        © 2025 Mark S. Hewitt, Steven Sprague
+      </div>
+      
+      <div class="whitepaper-toc">
+        <h3>Table of Contents</h3>
+        <ul>
+          <li><a href="#abstract">Abstract</a></li>
+          <li><a href="#digital-2-0">Digital 2.0 – The Future is Digital</a></li>
+          <li><a href="#the-problem">The Problem</a></li>
+          <li><a href="#gain">The Global Attestation and Identity Network (GAIN)</a></li>
+          <li><a href="#manifest">The Manifest of Controls</a></li>
+          <li><a href="#architecture">Architecture and Implementation</a></li>
+          <li><a href="#applications">Rivetz's Initial Applications for Digital 2.0</a></li>
+          <li><a href="#business-model">The Business Model</a></li>
+          <li><a href="#putting-rvt-to-work">Putting RvT to Work</a></li>
+          <li><a href="#regulatory">Navigating the Evolving Regulatory Landscape</a></li>
+          <li><a href="#conclusion">Conclusion & Call to Action</a></li>
+        </ul>
+      </div>
+      
+      <h2 id="abstract">Abstract</h2>
+      <p>The future is digital!</p>
+      <p>A world built not on Physical relationships with digital infrastructure, but a future built on digital relationships and digital infrastructure. A world where data, systems and services have original information and can be validated. A world where all digital instructions/messages are created by digital identities and signed and bound to policy enforced by the use of keys and not centralized connections.</p>
+      <p>Where the human to digital interface is secured with the technologies of intent for input and secured presentation for output. Rivetz is building this Digital 2.0 future and enabling the operations and economics with the RvT token.</p>
+      <p>The technology to enable this transformation has been developed over years and is globally available. The technologies of trusted computing, blockchain, trusted execution, hardware secured assurance, trusted display, Defi, Wallets, and AI. By leveraging cross-chain interoperability and confidential computing, Rivetz enhances security for DeFi, enterprise applications, IoT, and AI-driven automation. This paper explores the architecture, real-world applications, and regulatory compliance frameworks that position Rivetz as a critical enabler of next-generation of digital, Digital 2.0.</p>
+      <p>The global transformation to a Digital 2.0 ecosystem will not happen overnight. Rivetz is focused on delivering a few basic capabilities that are fundamental to enabling this transition and partnering with companies to build the ecosystem of Digital 2.0.</p>
+      
+      <h3>This white paper outlines the technologies and the initial building blocks Rivetz believes are core to the Digital 2.0 future:</h3>
+      <ul>
+        <li>Secure messages/instructions – core to digital 2.0 are secure instructions with a clear origin and bound to a manifest of polices to prove the quality, integrity and compliance in real time and maintain an immutable and sharable forensic proof that can be validated with confidentiality.</li>
+        <li>Blockchain provides the immutable sharing of a common origin and integrity. The foundational record keeping for Digital 2.0, enforcing transaction integrity, DeFi security, and digital identity verification across ecosystems.</li>
+        <li>A manifest of controls binding policy and compliance data to interactions using keys to enforce policy and not connections. Offering Digital 2.0 the decentralized compliance and control required for everyone to rely on data.</li>
+        <li>A system built on a foundation of digital authorities providing all of Digital 2.0 with the origin of manufactured data. The foundation of both provenance and quality.</li>
+        <li>A measured and verified human to digital interface that assure the Input and output for human interaction with Digital 2.0</li>
+        <li>AI with proof a known input produced the expected output manufacturing data with a birth certificate.</li>
+        <li>Systems, services and processors with measured state to assure a system they are executing as expected – Securing finance, IoT, healthcare, and government systems with cryptographic proof of trust.</li>
+        <li>Decentralized Regulatory Compliance & Cybersecurity Standards – promoting standards to bind policy to the creation and consumption of data and not to just access, a transition to an identity based model of compute for APIs, Social media, Messaging and instructions. Assuring combining privacy with the regulatory needs of AML/KYC, GDPR, HIPAA, ISO 27001, and SEC compliance to enable enterprises and governments to adopt provable Digital 2.0 models.</li>
+      </ul>
+      
+      <h2 id="digital-2-0">Digital 2.0 – The Future is Digital</h2>
+      <p>In 2024 the president of the United States put out a PDF on X that stated he was no longer seeking the Presidency. There was no way to validate the authenticity of this statement. The PDF was not signed, the X account could have been compromised, only Physical relationship tools were used including Letterhead and signature but delivered over a digital infrastructure. For the future to be digital it must be possible to validate this type of communication from a digital root to the delivered message. Rivetz believes in this future and is working to deliver it.</p>
+      
+      <h3>A Foundation Built on a Fabric of Digital Authorities</h3>
+      <p>The world has dozens of solutions for digital identity but has wrestled with the tools for digital authority. A digital name that assures the entity granting the authority is known. The bridge between the Physical world and the digital world is constructed using digital authorities. Digital 2.0 is built on a foundation of digital authorities providing the path to the digital root.</p>
+      
+      <h3>The Growing need for Digital Origin to be Built-In</h3>
+      <p>Proof of intent and origin needs to be built in and not implied as it is today. Proof an AI actually produced the output and not just human validation of the URL of the AI model.</p>
+      <p>As digital ecosystems expand, traditional security models struggle to keep up with the supply of data coming from all places. Financial institutions, AI-driven enterprises, decentralized applications, and IoT networks require a new approach where the data relied on originates from a source that can be validated and the health and integrity of systems manufacturing data can be validated. A solution where the status of systems is immutably shared and recorded for use today and forensically verifiable in the future.</p>
+      <p>Rivetz believes in a Digital 2.0 future where all data should have origin to be reliable. However, the practical start is to focus on digital interactions that are important. Rivetz provides the architecture and tools to assure data origin is built in and can be validated.</p>
+      
+      <h3>Measured Compute and Attestation</h3>
+      <p>Unlike legacy cyber-security models that assume trust in applications, devices, and transactions, Rivetz ensures trust must be proven before access is granted or commands are executed. This approach eliminates vulnerabilities caused by malware, compromised identities, and unauthorized system modifications.</p>
+      <p>Rivetz leverages the technologies and principles of trusted computing developed over the last 20 years to achieve this goal. Recording a reference integrity on blockchain and offering the tools to measure and attest to the operation of the systems. Rivetz is working with industry partners to achieve these goals.</p>
+      
+      <h3>How Rivetz Redefines the quality and integrity of data</h3>
+      <p>Cyber security models have been testing and patching systems for decades, but the cybersecurity controls are not bound to the output to assure the quality and authenticity of data. The old trust in Physical brands like AWS, IBM, Oracle and Microsoft need to be updated from quarterly reports in public filings to provable status bound to the data itself. The data has escaped the perimeter of the castle walls and is now being relied on directly across a community computing model. Simple steps are taken by Rivetz to enable this future.</p>
+      <ul>
+        <li>Attestation Before Execution – Devices, AI models, and digital identities must pass cryptographic verification before interacting with sensitive data or executing system changes.</li>
+        <li>Secure Instructions & Secure Command Execution – Ensuring only authenticated devices can issue critical system commands (e.g., financial transactions, smart contract modifications, AI-driven automation).</li>
+        <li>Blockchains for secure data sharing - Leveraging decentralized ledgers to prevent access fraud and enable cross-chain ecosystems of status and authorities.</li>
+        <li>Continuous Validation – Real-time integrity checks ensure that once a device is verified, it remains in a measured state throughout its operational lifecycle.</li>
+      </ul>
+      <p>Rivetz is partnering with key technology providers to enable this future and construct an Ecosystem for Digital 2.0</p>
+      
+      <h3>The Rivetz Model: A Set Global Standard for Data Quality</h3>
+      <p>No single company can deliver Digital 2.0 it will take a global community as blockchain, AI, and decentralized computing evolve, the demand for a reliable, scalable, and verifiable digital input and output continues to grow. Rivetz is not just a cybersecurity solution—it is dedicated to contributing to the standards that are the foundation for a new digital future.</p>
+      <p>Rivetz will demonstrate how decentralized compliance with privacy can be delivered. The work to adopt new standards and regulations that allow a decentralized and safe digital future will be developed over the next decade. Blockchain is driving a new digital conversation, but the Digital 2.0 future is more than just financial transactions it is all data interactions. Rivetz will continue to evangelize and work towards this future.</p>
+      <p>Digital 2.0 begins now. Welcome to the future built on verifiable MATH and not paper where data has quality and systems are measured and have a known origin and control.</p>
+      
+      <h2 id="the-problem">The Problem</h2>
+      <h3>Digital 1.0 is coming to an end</h3>
+      <p>Digital systems have been built as a castle model forever. The Web just built connections between castles. Web 3.0 has continued to use these tired rails even with the evolution of blockchain as a completely new architecture for digital. Bitcoin the original demo app for blockchain shows the foundations of the future a platform built with the owner of the private key as the god at the center of the picture. A model where instructions once validated and recorded become a shared truth for all to use. A system built for the owner of the private key to locally assure the health and integrity of their system to secure instructions and manage the policies of intent. Gone is a reliance on the central reporting of Cybersecurity controls in a quarterly report by the bank. Bitcoin has no castles, only a community of owners of private keys building their shared future. A system built on verifiable MATH.</p>
+      
+      <h3>The castle cyber security model is not sustainable:</h3>
+      <ul>
+        <li>Reactive Approach: Most cybersecurity solutions are designed to detect and respond to threats after they occur, rather than preventing them proactively and the results are not shared.</li>
+        <li>Centralized Security Models: Traditional cybersecurity relies on centralized authorities and networks, making them single points of failure. A breach in a central server can compromise thousands or even millions of systems and users that rely on APIs from the central solution.</li>
+        <li>Outdated Authentication Methods: Passwords and multi-factor authentication (MFA) methods to access services and data are not sufficient. Output data must be signed and bound to the forensic data of origin and the state of the system that manufactured it. No longer can the raw materials of computers have no quality information to assure global integrity. Access to credentials, physical service brand and paper compliance is not enough.</li>
+        <li>Lack of Device-Level Security: Software-based security solutions often fail to secure individual computational devices, making Devices that handle the input output interface to humans an easy target for cyberattacks. The industry needs to move from the check engine light model to the tools of securing a digital relationship.</li>
+        <li>Inability to Scale: With the rise of blockchain, Internet of Things (IoT), and cloud computing, traditional Castle cybersecurity measures are struggling to keep up with the scale and complexity of modern digital infrastructure. A Digital 2.0 ecosystem built on origin, blockchain and verification will provide the path ahead.</li>
+      </ul>
+      
+      <h3>Regulatory Compliance Challenges</h3>
+      <p>Governments and regulatory bodies worldwide have been wholly dependent on the Castle model to enforce regulatory compliance. Policies are applied centrally. While there may have been a moment of enthusiasm by the regulators to KILL Crypto a key Digital 2.0 enabler that hope has been crushed. A new approach built on policies bound to keys and not policy bound to access must evolve. Many of the key compliance regulations will be impacted by the advent of a peer to peer secure instruction based computer model. Compliance will be enforced by wallet and smart contract technology. Tokens will be the foundation of evidence for compliance applied and paid for.</p>
+      
+      <h3>Key Compliance Regulations:</h3>
+      <ul>
+        <li>General Data Protection Regulation (GDPR) (Europe) – Requires businesses to protect personal data and report breaches within 72 hours. Violations can result in fines of up to 4% of annual global revenue.</li>
+        <li>California Consumer Privacy Act (CCPA) (United States) – Mandates transparency in data collection and storage while giving consumers more control over their personal information.</li>
+        <li>National Institute of Standards and Technology (NIST) Cybersecurity Framework (United States) – Provides guidelines for businesses to manage and mitigate cybersecurity risks effectively.</li>
+      </ul>
+      
+      <h3>The Digital 2.0 provides a new approach to Compliance:</h3>
+      <ul>
+        <li>Proof of Policies and Controls Measures: Organizations will demonstrate that their Policies and Controls were in place at the time data is manufactured and immutably bound to the output.</li>
+        <li>Data Integrity Assurance: Regulatory frameworks demand that businesses ensure the authenticity and accuracy of stored data information that can be appended to the data bound to data. A birth to death model of information bound to data.</li>
+        <li>Decentralized Environments: Traditional compliance models use centralized controls that are never shared, making them difficult to enforce in decentralized networks and blockchain-based systems.</li>
+      </ul>
+      
+      <h3>Digital 2.0 an Ecosystem of Messages</h3>
+      <p>20 years ago, the mobile phone industry was built on the hardware assurance of the SIM chip and SMS instructions and this architecture ATE the telephone industry that was built on pairs of copper wires, access, authentication and routing. Digital 2.0 is a similar model of messages, Keys and Chains and it will eat the Digital 1.0 systems that are built on connections.</p>
+      
+      <h4>Enterprise APIs</h4>
+      <p>The enterprise computer as a service model uses APIs to globally share data and service. This model built on authentication will transition to a secure instruction model with meta data bound to each message. Data with identity and data.</p>
+      
+      <h4>Social media</h4>
+      <p>The days of monolithic castles of social media controlled by billionaires are numbered a future built on blockchain, federation and owners with keys is transitioning today. The binding proof of origin to every social media message is how Digital 2.0 will bring the benefits of quality, authenticity and ownership to all of social media.</p>
+      
+      <h4>The Internet of Things (IoT)</h4>
+      <p>The Internet of things needs social media ecosystems for machines. As the technologies of Digital 2.0 become commonplace the IOT systems will be early adopters to transfer from the physical relationships of Username and password to the Digital 2.0 all digital relationships built on authorities, keys, blockchains and provable validation. Enabling a network of things to communicate and validate in real time. If each thing has an allowance, then each device can obtain policy and compliance validation in real time as needed without human intervention. RvT tokens are the foundation for machines to have an allowance.</p>
+      
+      <h2 id="gain">The Global Attestation and Identity Network (GAIN)</h2>
+      <h3>Executing a Vision for Digital 2.0</h3>
+      <p>In an era where digital interactions are increasingly at risk, the Ecosystem must evolve beyond reactive measures and centralized monitoring and control. The Global Attestation and Identity Network (GAIN) is a transformative approach that combines trusted computing, blockchain technology, and tokenization to establish a provable, tamper-proof framework for devices and digital interactions.</p>
+      <p>GAIN is designed to be the foundation of Digital 2.0—a decentralized ecosystem that ensures that every device, system, owner and relying user can prove its authenticity, security posture, and compliance in real-time. By merging sharable immutable blockchain records with Measured and validated system, GAIN introduces a new paradigm for cybersecurity, ensuring that digital interactions are safe, verifiable, and trustworthy.</p>
+      
+      <h3>Key Features of GAIN</h3>
+      <h4>1. Provable Device Origin</h4>
+      <p>Every device in the GAIN ecosystem is uniquely identifiable, ensuring that only known and authorized systems can participate in digital transactions. Unlike traditional authentication methods that rely on usernames, passwords, or centralized databases, GAIN leverages authorizations and strong digital identifiers combined with hardware-based cryptographic attestation to verify a device with unparalleled confidence.</p>
+      
+      <h4>2. Decentralized Compliance Automation</h4>
+      <p>Compliance with policies controls and regulations regulations often requires extensive documentation, audits, and third-party verification. GAIN automates compliance by recording validated controls and verifications immutably on the blockchain. Devices are continuously monitored and attested, proving that policies and controls are being enforced at all times.</p>
+      
+      <h4>3. Automated Cybersecurity Enforcement</h4>
+      <p>With traditional security, devices are often left unchecked until a breach occurs. GAIN changes this by making cybersecurity enforcement automated and continuous. If a device fails a security check, it is immediately flagged and restricted from executing transactions until the issue is resolved, preventing potential exploits before they happen.</p>
+      
+      <h4>4. Scalable, Real-Time Digital Validation</h4>
+      <p>The GAIN ecosystem scales effortlessly across billions of connected devices, from smartphones and laptops to IoT sensors and industrial systems. Every device can perform real-time integrity checks and instantly verify its digital state before performing sensitive operations.</p>
+      
+      <h3>How GAIN Works</h3>
+      <ol>
+        <li>Device Registration: A new device is Authorized by the Owners Digital Name providing identity for GAIN network, The Rivetz solution will leverage established global standards for device identity using Trusted Execution Environment (TEE) hardware, Trusted Platform Module (TPM) specifications, ESIM and other cryptographic keys in hardware or software</li>
+        <li>Continuous Attestation: The device periodically records security health reports on the devices specified blockchain, ensuring that its security posture remains intact and can be shared to and validated by all relying parties.</li>
+        <li>Transaction Validation: Before executing a sensitive operation, such as financial transactions or data sharing, the device must pass a real-time integrity check and record forensically provable results with the transaction.</li>
+        <li>Automated Policy Enforcement: If the device's security state changes or becomes compromised, its ability to interact within the network is restricted until corrective action is taken.</li>
+      </ol>
+      <p>GAIN represents a new frontier in information assurance and quality—a world where manifest of digital controls are enforced at the device level, automated, private and recorded immutably on a decentralized ledger as part of an interaction. It is the backbone for a future where users and enterprises can confidently engage in the digital economy and prove the compliance, controls and assurance of the ecosystem. Peer to Peer transactions globally with verifiable compliance and privacy.</p>
+      
+      <h2 id="manifest">The Manifest of Controls</h2>
+      <h3>Policy bound to keys</h3>
+      <p>Digital 2.0 requires a new approach to policies and controls for any interaction. The advent of Peer-to-Peer secure messages or instruction eliminates the policy enforcement point that exists in all access control based systems. The introduction of a manifest of policies and controls is how policies can be bound to the operational use of a private key. Since all interactions are signed messages/instructions the private key provides the perfect enforcement point. The tools used to protect the private key provide the mechanism to enforce the manifest of controls established by the owner of the private key. Technologies such as TEE or Mutisignature models for keys will enforce the policy. Rivetz will implement three core capabilities for all transactions.</p>
+      
+      <h4>Local environment controls</h4>
+      <p>Local environment controls will use third party software to validate the health and integrity of the owners digital system. From simple antivirus to Bios Integrity tests a suit off controls and partners can be used to assure the device or system is operating as intended. For example, is the AI source code unchanged, what model data has been used to train, what is the geographic location of the processor.</p>
+      
+      <h4>User consent controls</h4>
+      <p>The bridge to the Physical world for the user. What consent technologies have been used to assure the interaction is authorized. Is the user authorized are their credentials still valid is a second signature required, has the user confirmed the interaction on a secure screen.</p>
+      
+      <h4>Remote policy services</h4>
+      <p>Remote policy services can be any type of control such as KYC or OFAC validation. Typically, these services are third parties who will provide a signed response to assure the authenticity of the remote policy execution. These centralized services are built on relationships between the owner and the policy service and designed to meet the needs of the relying part for the interaction.</p>
+      
+      <h4>RvT Utility Token</h4>
+      <p>The use of the RvT utility token is to pay for and record policy controls with third parties. This provides the ecosystem with both an operational and economic model for the microtransactions required for automated policy. The system building the Manifest will typically be provided with its own allowance to assure that every transaction can flow smoothly and be fully automated. By maintaining a small balance for a device, it prevents a system from accidentally exceeding its budgets.</p>
+      
+      <h2 id="architecture">Architecture and Implementation</h2>
+      <p>Digital 2.0 is built on a solid digital foundation of technology developed over the last two decades. Measured Hardware provides the base to offer an understanding of the quality of the assurances made. Attestation that provides the measuring of systems vs a reference condition. Secure instructions/messages provide the data with an identity to bind origin and policy data. Authorizations offer a source of ownership and control. And Validation provides the mathematically based claims and forensic data the owners and relying parties require to operate. Together these systems ensure the data produced has origin and can be relied on by owners and third parties.</p>
+      
+      <h3>Hardware-Based Secure Environments: The Foundation for Digital 2.0</h3>
+      <p>Hardware-based security environments provide a reliable measurable foundation in modern computing. The goal is not perfection but an understanding of the quality and origin of the environment. Measurements can vary in quality and intensity and should be matched with the actual risk level needed for the applications. These environments can leverage specialized hardware to execute security-sensitive tasks in a way that prevents tampering, unauthorized access, and malware interference. Some of the most widely used hardware security modules include:</p>
+      <ul>
+        <li>Trusted Platform Module (TPM): A cryptographic processor embedded in computers and servers to provide hardware-based key protection, secure boot validation, and attestation services. TPM ensures that only verified software loads during startup, preventing unauthorized modifications.</li>
+        <li>Trusted Execution Environment (TEE): A secure enclave within a processor that provides a separate, isolated execution space for sensitive computations. TEEs, such as Intel SGX, Arm TrustZone, and Apple Secure Enclave, help protect cryptographic operations, authentication mechanisms, and biometric data.</li>
+        <li>iSIM (Integrated SIM): Used in mobile and IoT devices, iSIM offers a hardware-protected identity module for device authentication and secure communications, replacing traditional SIM cards while maintaining carrier-grade security.</li>
+        <li>Secure Processing Cores (GPUs & TPUs): Graphics Processing Units (GPUs) and Tensor Processing Units (TPUs) increasingly incorporate hardware-backed security layers for AI model execution, confidential computing, and zero-trust data processing. These secure cores ensure that AI-driven automation and cryptographic workloads remain tamper-proof.</li>
+        <li>Hardware Security Modules (HSMs): Dedicated security appliances that provide high-assurance cryptographic processing for enterprise and financial applications, ensuring that encryption keys remain securely stored and managed.</li>
+      </ul>
+      
+      <h3>Attestation: Measuring Digital 2.0 quality</h3>
+      <p>Attestation is the process of verifying a system's integrity in real time. It ensures that devices, software, and transactions are operating as expected before they interact with a network or execute commands. Different systems have different attestation models. Rivetz's will leverage established global standards for attestation models and broadly use blockchain technology to record reference measurement data and attestation results. The devices self generate cryptographic integrity proofs, which are validated by a remote verifier, blockchain smart contract, or decentralized security service. This ensures that only authentic, uncompromised devices participate in digital transactions.</p>
+      
+      <h4>Key Components of Attestation:</h4>
+      <ul>
+        <li>Measured Hardware, software or systems – Verifying device integrity using a manifest of measurements ideally embedded in secure hardware or software.</li>
+        <li>Real-time validation – Continuously monitoring device state to detect unauthorized modifications.</li>
+        <li>Blockchain-based verification – Storing attestation reference and results on decentralized ledgers for transparency and auditability.</li>
+      </ul>
+      
+      <h3>Secure Instructions/Messages for Digital 2.0 operations</h3>
+      <p>A Secure Instruction is a verifiable, cryptographically signed message that ensures only measured Devices can create or execute digital interactions. Unlike traditional command execution, which can be hijacked by malware or unauthorized users, Trusted Instructions guarantee that system modifications, transactions, and automation processes are properly executed.</p>
+      <p>Secure instruction as the basis of all blockchain interactions and smart contract operations. Digital 2.0 leverages this well-developed infrastructure of wallets and keys and expands the use to all digital interactions from social media to advanced command and control. Rivetz enhances the secure instruction model by adding the technology of intent, policy and compliance embedded in the instruction with a manifest of controls. Binding to the instructions the necessary forensic information for the systems to be tested and validated and for intent to be proven.</p>
+      
+      <h3>Authorities the road map to origin for Digital 2.0</h3>
+      <p>Core to the architecture of Digital 2.0 is the transition from access to control to digitally verifiable authorities. A shift from a paper-based model to a purely digital Authorities structure. Binding every digital interaction back to a Digital Name a root of trust. Digital authorities as self-sovereign identities for the owner or the relying party that enable the bridge from the real world to the Digital 2.0 ecosystem. A bridge that carries with it the established regulatory frameworks, The nation state laws and governance and the global treaties that govern how the world interacts.</p>
+      <p>Authorities provide the foundation for the digital relationships that govern Digital 2.0 and bind the origin of data, the validation of data and the proof of integrity. This simple bridge provides the governance and legal framework to assure Digital 2.0 can be applied everywhere. Many statutes such as E-signature laws provide this foundation. Hopefully the Crypto laws of the future will accelerate the adoption of Digital 2.0 and the power of blockchain technology.</p>
+      
+      <h3>Validation creating the evidence for Digital 2.0</h3>
+      <p>Validation creates evidence to provide the owner and any relying party with the information needed to understand the quality of the data being relied on. No system is perfect. The safety of a Toyota sedan vs an F1 racecar from Ferrari are different but inspecting the rusted frame or the cracked welds will still indicate to the relying party their expectations for the level of safety provided and how the vehicle should be used.</p>
+      <p>Digital 2.0 is designed to support evidence bound to data that can inform the relying party as to the risks that should be taken. Today, most data come from or is influenced by unknow systems, compute, storage and has little to no origin data. As the world moves from a castle model with monolithic security to a community model of compute relying on third parts systems, processing and manufactured data, it is critical to move to a validation model to assure the quality and integrity of the data relied on.</p>
+      <p>Rivetz will work with third parties to realize a decentralized quantum resistant validation framework.</p>
+      
+      <h2 id="applications">Rivetz's Initial Applications for Digital 2.0</h2>
+      <p>Rivetz is focused on a few different application verticals and is building IP and solutions in those areas today. The use of the Digital 2.0 architecture and the application of the RvT tokens to enable commercial interactions and services. Each of these services is built on existing and developing relationships with partners. The solutions explore the core technologies and partnerships needed to launch Digital 2.0. There are no guarantees that any of these service verticals will achieve economic viability.</p>
+      
+      <h3>Certified AI for Digital 2.0</h3>
+      <p>AI is taking over the world but today the data manufactured by AI has no origin. Rivetz has a license to patent pending technology to assure data produced by AI comes from a known request and attaches origin data to the output. By enhancing an AI solution with Rivetz technology the manufactured data can be validated and the measured state of the AI system at the time the data was created is known. Measurement of the AI can be as simple as the version of software and any known model information or as complex as knowledge of the underlying high performance compute its location, operation, control and validation of the underlying firmware and software.</p>
+      <p>If all AI output is ultimately a secure message, then the output can have a direct link to the manufacturer and data can have data. If a model is discovered to be compromised, then all output from the AI can receive notice of the compromise. Manufactured data can become an asset and its value recognized over time. Information can be validated assuring the output has not been altered or tampered with.</p>
+      <p>RvT tokens will be used to pay for and record certain AI output at the owner's request. Information collected for compliance or authorization by a manifest can be securely recorded and timestamped. All AI output should have origin data, and the state of an AI should be known before it is relied on. Rivetz will deliver that in the future.</p>
+      
+      <h3>Secure Instructions and Messaging with Wallets</h3>
+      <p>A core feature of the Rivetz Ecosystem is secure instructions and Messages. It is the primary I/O for humans to Smart contracts, Blockchains and all other systems. Rivetz is focused on building solutions using existing state-of-the-art hardware wallets and extending the functionality to include policy bound to keys. The technology of a Manifest of controls offers assurance that policies and controls are applied for the benefit of the owner of the device. These decentralized and centralized controls are selected by the Owner and bound to the messages they create. Offering the owner the evidence they require for Peer-to-peer transactions. Since typically only a hash is recorded with the transaction the details of the manifest are only known to the owner and the relying parties the owner wishes to share the manifest with.</p>
+      <p>Rivetz is building on the Foundation offered by Ledger, Trezor and other trusted execution environments to enable the models Pioneered by Rivetz in 2014 to 2019. Technologies such as dual roots of trust and policies bound to keys. Ultimately the Rivetz capabilities will provide the compliance and control systems the Global regulators need to enable peer to peer commerce with compliance and the confidentiality and evidence owners require to adopt the technology.</p>
+      
+      <h3>Social media with origin data</h3>
+      <p>Rivetz is partnering with an emerging social media platform to enable advanced hardware assurance model to prove ownership and manage reputation. Every social media network wrestle with account controls and fake data. Rivetz provides users with high assurance messages and the simplicity of a consumer social media app. The technologies of consent and permission exactly fit the mold of a Manifest of Controls and provide the evidence required to assure Content posted is content intended.</p>
+      <p>The Rivetz solution allows anonymous accounts to assure account control and validate the decentralized controls needed to assure Identity and Intent. The Rivetz solution will leverage RvT tokens to ensure the controls are recorded on blockchain and can easily be validated globally.</p>
+      
+      <h3>Origin data for consumer and enterprise devices</h3>
+      <p>Efforts are underway to use the Trusted computing standards to ensure devices procured have not been tampered with. The technology of Bios integrity and reference measurements from manufacturers are the foundation of defining the origin of a machine and validating its integrity. FCC has launched a Trustmark requirement that validates the software for all FCC licensed devices. Rivetz will apply it's solutions for device identity and integrity to automate these solutions and provide practical everyday use models.</p>
+      <p>The integration of device authorization and device identity to enable the systems that are validated to manufacture data. Rivetz and RvT tokens will enable devices to record available information on chains and share the state of the device with authorized systems and services.</p>
+      
+      <h3>Participation in industry standards and regulatory efforts for Digital 2.0</h3>
+      <p>The advent of Digital 2.0 will require new approaches to data and compliance. Rivetz believes the market is ready to adopt the earliest components of Digital 2.0 and establish the foundations for the origin of all things digital. Gone will be the days when a president can post a PDF on X and the world will not really know if it is authentic.</p>
+      <p>Rivetz will as resources allow work to help the industry adopt standards to create use and validate data with origin.</p>
+      
+      <h2 id="business-model">The Business Model</h2>
+      <h3>The Economics of Security and Trust</h3>
+      <p>Digital 2.0 is built on a utility business model incorporating pay per use, subscription, staking and software licensing. While many aspects of the business model are conventional there are whole concepts that still are in the innovation stage, such as devices with an allowance. It is expected that the business model and how revenues are collected will evolve substantially.</p>
+      <p>At the heart of the Rootz business model innovation is the RvT token. While RvT tokens have had significant regulatory uncertainty for the last few years, thanks to the adventures of the SEC. It is clear today that RvT tokens are a product, a commodity and can be put to work as such.</p>
+      <p>The business of Rivetz is the selling and recording of interactions with services that can be executed by a user or a device. The interactions are designed to immutably record data on various blockchains and deliver the value of a Digital 2.0 experience.</p>
+      
+      <h4>Example models</h4>
+      <p>Direct payment for a service such as Geolocation would result in the creation of an event for the specific interaction recording evidence on chain and the information securely within a chain or a manifest.</p>
+      <p>A device might be transferred to a balance and the device can then spend the balance as required.</p>
+      <p>A service might require a certain acquisition of RvT tokens every month but not the transfer of the tokens.</p>
+      <p>Tokens might be transferred to employees but limited on the services they can be used to acquire.</p>
+      <p>Innovation in the utility of tokens is early on. Rivetz will collaborate with the industry to fully explore new models and services that tokens can enable.</p>
+      
+      <h2 id="putting-rvt-to-work">Putting RvT to Work</h2>
+      <p>The power of a utility token is the integration of payment and operations into a single command. There is no buy and then check-out, there is only use. While this concept of use and operations exceeded the regulatory capability for the last decade the reality is that a token is operational that day it is created. The smart contract and the basic operations of a blockchain provided for the recording of immutable events, data, identity and integrity all in one seamless operation. SEC systemically tried to eliminate the inconvenient conversation about the use characteristics of a token and have slowed the adoption by industry for many years. The principles, economics and operations of a token are core to the USE models for all participants. In some cases, it is store of value in other cases it is proof an identity is consistent overtime enabling the concepts and principles of digital relationships and authorizations.</p>
+      
+      <h3>The Versatility of RvT Across Blockchains and Emerging Technologies</h3>
+      <p>A blockchain transaction is core to enabling an authority across chains and digital certificate infrastructure. The RvT token provides a way to enable these transactions and the economics to support them.</p>
+      <p>The Rivetz Token (RvT) is more than just a means of transaction—it is the backbone of recorded digital interactions, enabling verifiable interactions across decentralized networks. As blockchain technology evolves, RvT remains adaptable, ensuring security and attestation services remain at the forefront of innovation.</p>
+      <p>By supporting multiple blockchains, DeFi protocols, enterprise applications, and quantum-resistant security models, RvT will serve as a universal service layer for the Digital 2.0 ecosystem.</p>
+      
+      <h3>The Device, System or AI allowance</h3>
+      <p>RvT is a token that is and will be designed to provide a device an allowance. This is a subaccount model where an owner has the right to grant or remove value. The goal is to enable a few billion devices and services to maintain a small balance of value the device controls automatically. Devices are not perfect, and it is important to limit the amount of value a device can spend without supervision. An allowance is a great cyber security model to limit loss. A company can procure millions of RvT but then issue only a few to each of thousands of devices.</p>
+      <p>The value of RvT as the tool to both pay for and operate digital 2.0 is that it is unstoppable. Entities can rely on RvT to work as long as the networks and blockchains are operational. The unstoppable nature of RvT is critical for enterprise, government and individuals who would rely on these technologies for the production of mission critical data and digital proof. Potentially every enterprise and potentially every device might need a little RvT to create and consume data.</p>
+      
+      <h3>Digital Interactions will need to prove compliance</h3>
+      <p>Digital 2.0 is designed for decentralized compliance. The owner of a device can dictate the policies the device must comply with before it can execute an interaction. These policies can be enforced locally or on a wide area or service basis. Every policy has the potential to require an RvT transaction to record and pay for the interaction.</p>
+      
+      <h3>The value of tokens</h3>
+      <p>The construction of an ecosystem with a token is not the creation of a security but it is the creation of a utility. A commodity product that anyone</p>
+      
+      <h3>Quantum-Resistant Security with RvT</h3>
+      <p>The rise of quantum computing poses a significant challenge to current encryption and cybersecurity protocols. Most cryptographic algorithms used today, including those securing blockchain transactions, will eventually be vulnerable to quantum attacks. RvT ensures future-proof security by integrating with quantum-resistant cryptography and post-quantum attestation mechanisms.</p>
+      
+      <h4>How RvT Adapts to Quantum Security:</h4>
+      <ul>
+        <li>Post-Quantum Cryptographic Signatures – RvT integrates with lattice-based encryption and hash-based cryptography, ensuring attestation remains secure even in a quantum-dominated future.</li>
+        <li>Quantum-Safe Blockchain Integration – Future-proof blockchains like QAN, Quantum Resistant Ledger (QRL), and Algorand can integrate RvT capabilities to enforce quantum-resistant device authentication.</li>
+        <li>Decentralized AI & Quantum-Aided Decision Making – As AI and quantum computing evolve, Rivetz ensures AI-driven systems operate from verified, tamper-proof environments.</li>
+      </ul>
+      
+      <h2 id="regulatory">Navigating the Evolving Regulatory Landscape</h2>
+      <p>Rivetz has fought a hard battle with the SEC to arrive today where the rules to sell tokens in the USA are still evolving. It is clear that RvT tokens can be used and sold. This battle has also informed the company on the many challenges faced by industry as the world continue to "go Digital" the challenges of peer to peer compliance and the new laws required are still in formation.</p>
+      
+      <h3>A New Era of Compliance & Security Enforcement</h3>
+      <p>As cyber threats continue to evolve, governments and regulatory bodies worldwide are wrestling with digital and the lack of tools to assure Digital information can be relied on. The old models of cybersecurity have either failed or are failing as we live a more interconnected life daily. There have been may early warning signs from the hacks on HVAC units to the hacks of Bios. In addition, the rise of blockchain, decentralized finance (DeFi), tokenized assets, AI governance, and IoT automation has introduced new regulatory challenges that traditional compliance frameworks were never designed to address.</p>
+      <p>Rivetz bridges the gap between security enforcement and regulatory compliance by shifting control and policy enforcement from a centralized model to policy bound to Keys and the use formation of secure instructions/messages. An approach that offers more detailed policy controls and provable privacy.</p>
+      <ul>
+        <li>Peer to peer commerce</li>
+        <li>Data with origin</li>
+        <li>Measured systems</li>
+        <li>Chain of authorities</li>
+      </ul>
+      <p>Delivering Digital 2.0 the architecture, principles and services to enable the transformation of Compliance and regulation. A digital future that is both private with controls in the hands of the owners and principles but with the Forensic evidence required to meet the needs of Communities and governments worldwide.</p>
+      
+      <h3>Key Regulatory Frameworks supported by decentralized policy controls</h3>
+      <h4>1. Financial Compliance & Digital Asset Regulations</h4>
+      <ul>
+        <li>AML/KYC (Anti-Money Laundering & Know Your Customer) Standards</li>
+        <li>Financial Action Task Force (FATF) Travel Rule</li>
+        <li>Securities & Exchange Commission (SEC) Compliance</li>
+        <li>Central Bank Digital Currencies (CBDCs) & Regulated Stablecoins</li>
+      </ul>
+      
+      <h4>2. Data Privacy & Cybersecurity Frameworks</h4>
+      <ul>
+        <li>General Data Protection Regulation (GDPR) (EU) & California Consumer Privacy Act (CCPA) (US)</li>
+        <li>ISO/IEC 27001 – International Standard for Information Security</li>
+        <li>NIST Cybersecurity Framework & FIPS 140-3 Compliance</li>
+      </ul>
+      
+      <h4>3. Blockchain, AI, & IoT Security Regulations</h4>
+      <ul>
+        <li>Cybersecurity Maturity Model Certification (CMMC) – US Department of Defense</li>
+        <li>HIPAA & FDA Compliance for Healthcare Systems</li>
+        <li>AI Ethics & Compliance Frameworks</li>
+        <li>IoT Security Act & Industrial Control System (ICS) Compliance</li>
+      </ul>
+      
+      <h3>Compliance is built in and not stapled on</h3>
+      <p>Cross border and cross industry regulations provide a matrix of almost infinite complexity. By integrating a manifest of controls at the time an interaction is assembled and executed every transaction can achieve a unique regulatory profile and every transaction can be validated. The power of blockchain assures the evidence can be securely shared in real time to those who need to know. Rivetz ensures enterprises, financial institutions, and decentralized platforms can operate securely, efficiently, and in full compliance with international standards and controls.</p>
+      <p>With Rivetz, compliance is not a burden—it is a built-in competitive advantage.</p>
+      
+      <h2 id="conclusion">Conclusion & Call to Action</h2>
+      <h3>The time for Digital 2.0 is here</h3>
+      <p>The future is digital, but a new architecture built on a foundation of digital relationships and not paper is required. Blockchain technologies have provided proof-of-concept demonstration now it is time to put the technology to work every day and everywhere. Rivetz is focused on building the utilities and the everyday experience of Digital 2.0. A solution built on secure messages and instructions and where all data has origin. A where all systems are authorized, and the foundations of quality and integrity are proven by MATH.</p>
+      <p>The RvT token provides a system to both operate and pay for the services consumed, offering a future that works for both owners and devices as a utility paying for what is needed when it is needed using a simple solution.</p>
+      <p>The Eco system of Digital 2.0 is a community of companies and owners offering a new type of digital relationship that is global and safe. Companies can partner with Rivetz to use these models and the RvT token to deliver a new experience.</p>
+      <p>RvT tokens will be available from the company in the near future as part of a regulated offering and will deliver value to users as soon as they are delivered. The future is digital.</p>
+      <p>Visit www.rivetz.com to learn more and get started.</p>
+      
+      <div style="margin-top: 60px; padding-top: 30px; border-top: 2px solid #eee;">
+        <h2>Appendix 1: About Rivetz</h2>
+        <ul>
+          <li>Launched in 2013</li>
+          <li>Built amazing technology for Android TEE with Samsung and Trustonic</li>
+          <li>Delivered over 1 million in US DOD contract work for mobile security and secure messages</li>
+          <li>Executed an ICO in the summer of 2017 sold 18 million dollars in RvT tokens. 1/3 of sales were in USA</li>
+          <li>Partnered with Telefonica to develop and patent dual roots of trust.</li>
+          <li>Partnered with many early blockchain participants.</li>
+          <li>Was targeted by the SEC for the sale of tokens. In 2019.</li>
+          <li>The company shut down operations as it could not secure further capital in March of 2020</li>
+          <li>Steven Sprague argued Pro Se as a defendant in the case.</li>
+          <li>Opinion released by the court in October of 2024 and with Final judgement in March of 2025</li>
+          <li>Company Fined $230,000 for failure to register the sale of RvT as an investment contract.</li>
+          <li>The company agreed to not violate section 5 in the future.</li>
+          <li>RvT token is not a security and has no restrictions on use.</li>
+          <li>The company is exploring a relaunch of the technology and the offering of RvT tokens in the USA and globally.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Journey</a></li>
+            <li><a href="#">Leadership</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Technology</h4>
+          <ul>
+            <li><a href="#">GAIN Platform</a></li>
+            <li><a href="#">Manifest of Controls</a></li>
+            <li><a href="#">Attestation</a></li>
+            <li><a href="#">Digital Authorities</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="#">Certified AI</a></li>
+            <li><a href="#">Secure Messaging</a></li>
+            <li><a href="#">Social Media</a></li>
+            <li><a href="#">Device Integrity</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">White Papers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Developer Docs</a></li>
+            <li><a href="#">RvT Token</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        © 2025 Rivetz. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
