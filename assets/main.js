@@ -51,8 +51,8 @@ class Main {
 
     parsePath(location = '') {
         this.hash = location.split('#')[1];
-        if (!this.hash) {
-            this.page = "Home";
+        if (!this.hash || this.hash === '') {
+            this.page = "home";
             this.anchor = '';
         } else {
             let match = this.hash.match(/^([A-Za-z0-9-_]*)(?:\.)?(.*)?/);
