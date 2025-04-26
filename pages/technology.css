@@ -1,0 +1,289 @@
+.page-hero {
+    background: linear-gradient(135deg, var(--dark) 0%, #34495E 100%);
+    color: var(--light);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.page-hero p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.gain-section {
+    padding: 80px 20px;
+    background-color: var(--light);
+}
+
+.gain-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gain-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.gain-intro h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.gain-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 40px;
+}
+
+.gain-feature {
+    background-color: var(--light);
+    border: 1px solid rgba(242, 106, 48, 0.2);
+    border-radius: 12px;
+    padding: 40px;
+    transition: transform 0.3s;
+}
+
+.gain-feature:hover {
+    transform: translateY(-5px);
+}
+
+.gain-icon {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(242, 106, 48, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.gain-feature h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.gain-feature p {
+    margin-bottom: 20px;
+}
+
+.gain-feature ul {
+    list-style: none;
+}
+
+.gain-feature li {
+    padding-left: 25px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.gain-feature li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+}
+
+.architecture-section {
+    padding: 80px 20px;
+    background-color: var(--background);
+}
+
+.architecture-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.architecture-content h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 60px;
+}
+
+.architecture-visual {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.arch-component {
+    text-align: center;
+    padding: 30px 15px;
+    background-color: var(--light);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.arch-component:hover {
+    transform: translateY(-10px);
+}
+
+.arch-icon {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(242, 106, 48, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 32px;
+}
+
+.arch-component h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.arch-component p {
+    font-size: 14px;
+    color: var(--gray);
+}
+
+.manifest-section {
+    padding: 80px 20px;
+    background-color: var(--light);
+}
+
+.manifest-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.manifest-content h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 60px;
+}
+
+.manifest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.manifest-card {
+    background-color: var(--background);
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+}
+
+.manifest-number {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary);
+    color: var(--light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.manifest-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.hardware-section {
+    padding: 80px 20px;
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+.hardware-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hardware-content h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 60px;
+}
+
+.hardware-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.hardware-item {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.hardware-item:hover {
+    transform: translateY(-5px);
+}
+
+.hardware-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.hardware-item h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.hardware-item p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.quantum-section {
+    padding: 80px 20px;
+    background-color: var(--primary);
+    color: var(--light);
+    text-align: center;
+}
+
+.quantum-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quantum-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.quantum-content p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--light);
+    color: var(--primary);
+    padding: 14px 32px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}

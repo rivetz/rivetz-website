@@ -1,0 +1,112 @@
+{
+  "header": {
+    "menu": [
+      {
+        "name": "Home",
+        "path": "#home"
+      },
+      {
+        "name": "About",
+        "path": "#about"
+      },
+      {
+        "name": "Technology",
+        "path": "#technology"
+      },
+      {
+        "name": "Solutions",
+        "path": "#solutions"
+      },
+      {
+        "name": "RvT Token",
+        "path": "#rvt_token"
+      },
+      {
+        "name": "Resources",
+        "path": "#resources"
+      },
+      {
+        "name": "White Paper",
+        "path": "#whitepaper"
+      },
+      {
+        "name": "Contact",
+        "path": "#contact"
+      }
+    ]
+  },
+  "footer": {
+    "Company": [
+      {
+        "name":"About Us",
+        "path": "#about"
+      },
+      {
+        "name":"Our Journey",
+        "path": "#"
+      },
+      {
+        "name":"Leadership",
+        "path": "#"
+      },
+      {
+        "name":"Careers",
+        "path": "#"
+      }
+    ],
+    "Technology": [
+      {
+        "name":"GAIN Platform",
+        "path": "#"
+      },
+      {
+        "name":"Manifest of Controls",
+        "path": "#"
+      },
+      {
+        "name":"Attestation",
+        "path": "#"
+      },
+      {
+        "name":"Digital Authorities",
+        "path": "#"
+      }
+    ],
+    "Solutions": [
+      {
+        "name":"Certified AI",
+        "path": "#"
+      },
+      {
+        "name":"Secure Messaging",
+        "path": "#"
+      },
+      {
+        "name":"Social Media",
+        "path": "#"
+      },
+      {
+        "name":"Device Integrity",
+        "path": "#"
+      }
+    ],
+    "Resources": [
+      {
+        "name":"White Papers",
+        "path": "#whitepaper"
+      },
+      {
+        "name":"Blog",
+        "path": "#"
+      },
+      {
+        "name":"Developer Docs",
+        "path": "https://docs.rivetz.com"
+      },
+      {
+        "name":"RvT Token",
+        "path": "#rvt_token"
+      }
+    ]
+  }
+}

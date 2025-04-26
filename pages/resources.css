@@ -1,0 +1,258 @@
+.page-hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: var(--light);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.page-hero p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.resources-section {
+    padding: 80px 20px;
+}
+
+.resources-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-section {
+    margin-bottom: 80px;
+}
+
+.category-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.category-header h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.category-header p {
+    font-size: 18px;
+    color: var(--gray);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.resource-card {
+    background-color: var(--light);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.resource-card:hover {
+    transform: translateY(-10px);
+}
+
+.resource-image {
+    height: 200px;
+    background-color: rgba(242, 106, 48, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: var(--primary);
+}
+
+.resource-content {
+    padding: 30px;
+}
+
+.resource-tag {
+    display: inline-block;
+    background-color: rgba(242, 106, 48, 0.1);
+    color: var(--primary);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.resource-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.resource-card p {
+    font-size: 16px;
+    color: var(--gray);
+    margin-bottom: 20px;
+}
+
+.resource-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.2s;
+}
+
+.resource-link:hover {
+    transform: translateX(5px);
+}
+
+.resource-link::after {
+    content: '→';
+    margin-left: 5px;
+}
+
+.developer-section {
+    padding: 80px 20px;
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+.developer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.developer-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.developer-header h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.developer-header p {
+    font-size: 18px;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.developer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.developer-card {
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.developer-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255,255,255,0.08);
+}
+
+.developer-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: var(--secondary);
+}
+
+.developer-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.developer-card p {
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+}
+
+.newsletter-section {
+    padding: 80px 20px;
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+.newsletter-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.newsletter-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.newsletter-content p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.newsletter-form button {
+    background-color: var(--light);
+    color: var(--primary);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.newsletter-form button:hover {
+    transform: translateY(-2px);
+    background-color: var(--background);
+}
