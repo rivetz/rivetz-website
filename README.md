@@ -1,4 +1,4 @@
 # rivetz-website
 Public static hosting
 
-https://staging.rivetz.com
+<a target='_blank' href='https://staging.rivetz.com'>https://staging.rivetz.com</a>
