@@ -21,6 +21,9 @@
         "name": "RvT Token",
         "path": "#token"
       },{
+        "name": "SEC",
+        "path": "#SEC"
+      },{
         "name": "RvT Sale",
         "path": "#token-sale"
       },
