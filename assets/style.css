@@ -74,6 +74,12 @@ nav a:hover {
     position: relative;
     overflow: hidden;
 }
+.hero.primary-tray {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+}
+.hero.dark-tray {
+    background: var(--dark);
+}
 
 .hero::before {
     content: '';
@@ -214,8 +220,8 @@ nav a:hover {
 }
 
 .timeline {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 40px;
     position: relative;
 }
@@ -236,13 +242,10 @@ nav a:hover {
     color: var(--primary);
 }
 
-.timeline-left, .timeline-right {
-    display: flex;
+.timeline-item {
+    flex: 200px;
     flex-direction: column;
     gap: 20px;
-}
-
-.timeline-item {
     padding: 20px;
     border-radius: 8px;
     border: 1px solid rgba(242, 106, 48, 0.2);
@@ -399,3 +402,179 @@ footer {
         font-size: 36px;
     }
 }
+/******************************/
+/* Common Blocks -mjs         */
+/******************************/
+
+.section {
+    padding: 80px 20px;
+}
+.section.dark-tray {
+    background-color: var(--dark);
+    color: var(--light);
+}
+.section.light-tray {
+    background-color: var(--light);
+    color: var(--dark);
+}
+.section.primary-tray {
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section.center .section-content {
+    text-align: center;
+}
+
+.section-content h2 {
+    font-size: 36px;
+    margin-bottom: 60px;
+}
+
+.section-grid {
+    display: grid;
+    gap: 40px;
+}
+
+.section-item {
+    padding: 30px;
+    background-color: rgba(255,255,255,0.03);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05)
+}
+
+.section-item.actionable {
+    transition: transform 0.3s;
+    cursor:pointer;
+}
+
+.section-item.actionable:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255,255,255,0.08);
+}
+
+.section-item-icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: var(--secondary);
+}
+
+.section-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.section-list {
+    list-style: none;
+    margin: 30px 0;
+}
+
+.section-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.section-list li::before {
+    content: '✓';
+    color: var(--primary);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* full layout */
+.section-content.full {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 0;
+}
+.section-content.full P {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 16px;
+}
+
+.section-content.full h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+.section-content.full.primary h2 {
+    font-size: 36px;
+    color: var(--primary);
+}
+
+
+/* card grid layout */
+.section-content.card .section-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* block layout */
+.section-content.block {
+    text-align: center;
+}
+.section-content.block {
+    text-align: center;
+}
+.section-content.block .section-item {
+    background-color:var(--light);
+}
+.section-content.block .section-item h3 {
+    font-size: 20px;
+}
+.section-content.block .section-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.section-content.block .section-item {
+    text-align: start;
+    padding: 40px 30px;
+}
+
+.section-content.block .section-item-icon {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(242, 106, 48, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* image block layout */
+.section-content.image-block .section-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.section-content.image-block .section-item {
+    padding: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    background-color:var(--light);
+}
+
+.section-content.image-block .section-item-icon {
+    height: 200px;
+    background-color: rgba(242, 106, 48, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 48px;
+    margin-bottom: 0;
+}
+
+.section-content.image-block .section-item-content {
+    padding: 30px;
+}
+
+
