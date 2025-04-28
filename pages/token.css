@@ -1,206 +1,125 @@
-.token-hero {
+/* Additional CSS for the updated token page */
+
+.token-details-section {
+    padding: 80px 20px;
+    background-color: var(--background);
+}
+
+.token-details-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.token-circle {
+    width: 200px;
+    height: 200px;
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-    color: var(--light);
-    padding: 100px 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.token-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0);
-    background-size: 30px 30px;
-    opacity: 0.4;
-}
-
-.token-hero-content {
-    position: relative;
-    z-index: 1;
-}
-
-.token-hero h1 {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.token-hero p {
-    font-size: 20px;
-    max-width: 700px;
+    font-weight: bold;
+    color: var(--light);
     margin: 0 auto;
-    opacity: 0.9;
 }
 
-.token-utility-section {
-    padding: 80px 20px;
+.token-specs {
     background-color: var(--light);
-}
-
-.token-utility-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.token-utility-content h2 {
-    font-size: 36px;
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.utility-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-.utility-card {
-    background-color: var(--background);
     border-radius: 12px;
     padding: 30px;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.use-case-card:hover {
-    transform: translateY(-10px);
-}
-
-.use-case-icon {
-    font-size: 40px;
-    margin-bottom: 20px;
-    color: var(--primary);
-}
-
-.use-case-card h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
-}
-
-.integration-section {
-    padding: 80px 20px;
-    background-color: var(--dark);
-    color: var(--light);
-}
-
-.integration-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.integration-content h2 {
-    font-size: 36px;
-    margin-bottom: 60px;
-}
-
-.integration-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-}
-
-.integration-item {
-    padding: 30px;
-    background-color: rgba(255,255,255,0.05);
-    border-radius: 12px;
-    transition: transform 0.3s;
-}
-
-.integration-item:hover {
-    transform: translateY(-5px);
-    background-color: rgba(255,255,255,0.08);
-}
-
-.integration-icon {
-    font-size: 36px;
-    margin-bottom: 15px;
-    color: var(--secondary);
-}
-
-.integration-item h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.quantum-section {
-    padding: 80px 20px;
-    background-color: var(--primary);
-    color: var(--light);
-    text-align: center;
-}
-
-.quantum-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.quantum-content h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.quantum-content p {
-    font-size: 18px;
-    margin-bottom: 40px;
-}
-
-.acquisition-section {
-    padding: 80px 20px;
-    background-color: var(--light);
-}
-
-.acquisition-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.acquisition-content h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
-}
-
-.acquisition-card {
-    background-color: var(--background);
-    border-radius: 12px;
-    padding: 40px;
+    margin-bottom: 30px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
-.acquisition-card h3 {
-    font-size: 24px;
+.token-spec-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.token-spec-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.token-spec-item h4 {
+    font-size: 18px;
+    color: var(--gray);
+    margin-bottom: 8px;
+}
+
+.token-spec-item p {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.address-text {
+    font-family: monospace;
+    font-size: 16px !important;
+    word-break: break-all;
+}
+
+.token-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.token-link:hover {
+    text-decoration: underline;
+}
+
+.details-text h3 {
+    font-size: 28px;
     margin-bottom: 20px;
     color: var(--primary);
 }
 
-.acquisition-card p {
-    font-size: 16px;
-    margin-bottom: 30px;
+.details-text p {
+    margin-bottom: 20px;
+    font-size: 18px;
 }
 
-.btn {
-    display: inline-block;
-    background-color: var(--primary);
-    color: var(--light);
-    padding: 14px 32px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: transform 0.2s, box-shadow 0.2s;
+.economics-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+.economics-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    font-size: 18px;
 }
 
-.btn-secondary {
-    background-color: var(--light);
+.economics-list li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
     color: var(--primary);
-    border: 2px solid var(--primary);
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .token-circle {
+        margin-bottom: 40px;
+    }
 }
