@@ -22,7 +22,7 @@
         "path": "#token"
       },{
         "name": "SEC",
-        "path": "#SEC"
+        "path": "#sec"
       },{
         "name": "RvT Sale",
         "path": "#token-sale"

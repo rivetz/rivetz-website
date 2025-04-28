@@ -56,6 +56,10 @@ nav ul {
     gap: 30px;
 }
 
+nav li {
+    white-space: nowrap;
+}
+
 nav a {
     text-decoration: none;
     color: var(--dark);
@@ -78,7 +82,7 @@ nav a:hover {
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
 }
 .hero.dark-tray {
-    background: var(--dark);
+    background: var(--dark) !important;
 }
 
 .hero::before {
@@ -496,6 +500,7 @@ footer {
     margin-bottom: 0;
 }
 .section-content.full P {
+    text-align: start;
     font-size: 18px;
     opacity: 0.9;
     margin-bottom: 16px;
