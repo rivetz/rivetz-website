@@ -10,13 +10,51 @@ class Main {
             if (this.page !== currentPage) await this.drawBody();
             if (!this.anchor) window.scrollTo(0,0);
         });
+        
+        // Add mobile menu toggle functionality
+        this.initMobileMenu();
     }
+    
+    // Initialize mobile menu functionality
+    initMobileMenu() {
+        // Check if mobile menu button already exists, if not create it
+        if (!document.querySelector('.mobile-menu-toggle')) {
+            const headerContent = document.querySelector('.header-content');
+            const mobileMenuBtn = document.createElement('button');
+            mobileMenuBtn.className = 'mobile-menu-toggle';
+            mobileMenuBtn.setAttribute('aria-label', 'Toggle menu');
+            mobileMenuBtn.innerHTML = `
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            `;
+            headerContent.appendChild(mobileMenuBtn);
+            
+            // Add click event listener
+            mobileMenuBtn.addEventListener('click', () => {
+                const nav = document.querySelector('header nav');
+                nav.classList.toggle('mobile-active');
+                mobileMenuBtn.classList.toggle('active');
+            });
+            
+            // Close mobile menu when a link is clicked
+            document.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A' && e.target.closest('nav') && 
+                    document.querySelector('nav.mobile-active')) {
+                    document.querySelector('nav.mobile-active').classList.remove('mobile-active');
+                    document.querySelector('.mobile-menu-toggle.active').classList.remove('active');
+                }
+            });
+        }
+    }
+    
     static async mint() {
         let instance = new Main();
         let request = await fetch('/manifest.json');
         instance.manifest = await request.json();
         return instance;
     }
+    
     async drawHeader() {
         let html = '<ul>';
         for (let item of this.manifest.header.menu) {
@@ -25,6 +63,7 @@ class Main {
         html += '</ul>';
         this.headerNav.innerHTML = html;
     }
+    
     async drawFooter() {
         let html = '';
         for (let category of Object.keys(this.manifest.footer)) {
@@ -36,6 +75,7 @@ class Main {
         }
         this.footerNav.innerHTML = html;
     }
+    
     async drawBody() {
         let pageBody='Page not found';
         let pageStyle = '';
