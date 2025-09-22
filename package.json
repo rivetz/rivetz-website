@@ -1,0 +1,25 @@
+{
+  "name": "rivetz-website",
+  "version": "1.0.0",
+  "description": "Public static hosting",
+  "homepage": "https://github.com/rivetz/rivetz-website#readme",
+  "bugs": {
+    "url": "https://github.com/rivetz/rivetz-website/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rivetz/rivetz-website.git"
+  },
+  "license": "UNLICENSED",
+  "author": "",
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@metric-im/administrate": "file:../../metric-im/administrate",
+    "express": "^5.1.0",
+    "morgan": "^1.10.1"
+  }
+}

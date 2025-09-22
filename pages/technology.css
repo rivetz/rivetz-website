@@ -39,8 +39,28 @@
 
 .gain-features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
+}
+
+@media (max-width: 768px) {
+    .gain-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .gain-feature {
+        padding: 20px;
+        margin: 0 10px;
+    }
+    
+    .page-hero,
+    .gain-section,
+    .architecture-section,
+    .manifest-section,
+    .hardware-section,
+    .quantum-section {
+        padding: 40px 15px;
+    }
 }
 
 .gain-feature {
@@ -115,6 +135,20 @@
     gap: 20px;
 }
 
+@media (max-width: 768px) {
+    .architecture-visual {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .architecture-visual {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
 .arch-component {
     text-align: center;
     padding: 30px 15px;
@@ -170,6 +204,13 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
+}
+
+@media (max-width: 768px) {
+    .manifest-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }
 
 .manifest-card {

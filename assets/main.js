@@ -19,6 +19,7 @@ class Main {
     initMobileMenu() {
         // Check if mobile menu button already exists, if not create it
         if (!document.querySelector('.mobile-menu-toggle')) {
+            console.log('Creating mobile menu button');
             const headerContent = document.querySelector('.header-content');
             const mobileMenuBtn = document.createElement('button');
             mobileMenuBtn.className = 'mobile-menu-toggle';
@@ -29,9 +30,11 @@ class Main {
                 <span class="bar"></span>
             `;
             headerContent.appendChild(mobileMenuBtn);
+            console.log('Mobile menu button created');
             
             // Add click event listener
             mobileMenuBtn.addEventListener('click', () => {
+                console.log('Mobile menu clicked');
                 const nav = document.querySelector('header nav');
                 nav.classList.toggle('mobile-active');
                 mobileMenuBtn.classList.toggle('active');
@@ -45,6 +48,8 @@ class Main {
                     document.querySelector('.mobile-menu-toggle.active').classList.remove('active');
                 }
             });
+        } else {
+            console.log('Mobile menu button already exists');
         }
     }
     
@@ -85,7 +90,9 @@ class Main {
             let styleRequest = await fetch(`/pages/${this.page}.css`);
             if (styleRequest.ok) pageStyle = `<style>${await styleRequest.text()}</style>`;
         } catch(e) {}
+        
         this.bodyElement.innerHTML = pageStyle+'\n'+pageBody;
+        
         if (this.anchor) document.location.href = '#'+this.hash;
     }
 
@@ -96,7 +103,7 @@ class Main {
             this.anchor = '';
         } else {
             let match = this.hash.match(/^([A-Za-z0-9-_]*)(?:\.)?(.*)?/);
-            this.page = match[1];
+            this.page = match[1] || "home";
             this.anchor = match[2];
         }
     }
