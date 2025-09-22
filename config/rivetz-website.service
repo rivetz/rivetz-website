@@ -1,0 +1,18 @@
+[Unit]
+Description=rivetz-website
+
+[Service]
+WorkingDirectory=/opt/rivetz-website
+ExecStart=/usr/bin/npm start &
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=rootz-site
+Environment="PORT=80"
+Environment="PORTSSL=443"
+
+User=ubuntu
+Group=ubuntu
+
+[Install]
+WantedBy=multi-user.target
