@@ -1,0 +1,39 @@
+{
+  "specVersion": "1.0.0",
+  "generated": "2026-03-04T16:29:44.412Z",
+  "organization": "Rivetz",
+  "glossary": [
+    {
+      "term": "Digital 2.0",
+      "definition": "Rivetz's vision for a digital future built on verifiable trust, where every interaction has provable origin and integrity"
+    },
+    {
+      "term": "GAIN",
+      "definition": "Global Attestation and Identity Network — a framework combining trusted computing, blockchain, and tokenization for provable, tamper-proof digital interactions"
+    },
+    {
+      "term": "Attestation",
+      "definition": "Real-time integrity verification of devices and systems using hardware-based cryptographic proof (TPM, TEE, HSM)"
+    },
+    {
+      "term": "RvT Token",
+      "definition": "The utility token powering Digital 2.0 operations — used for device allowances, policy enforcement, service payments, and cross-chain operations"
+    },
+    {
+      "term": "Manifest of Controls",
+      "definition": "A cryptographically signed record of security controls, policies, and compliance verification that can be validated by any party"
+    },
+    {
+      "term": "Dual Roots of Trust",
+      "definition": "Patented technology developed with Telefonica combining two independent hardware security foundations for enhanced verification"
+    },
+    {
+      "term": "Digital Authority",
+      "definition": "A decentralized system for establishing, verifying, and managing digital identities and permissions using blockchain-anchored cryptographic proof"
+    },
+    {
+      "term": "Provable Device Origin",
+      "definition": "Hardware-based cryptographic attestation ensuring every device in the ecosystem is uniquely identifiable"
+    }
+  ]
+}

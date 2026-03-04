@@ -1,0 +1,142 @@
+{
+  "specVersion": "1.2.0",
+  "schemaVersion": "2026-02",
+  "standard": "ai-discovery",
+  "generated": "2026-03-04T16:29:44.410Z",
+  "organization": {
+    "name": "Rivetz",
+    "domain": "rivetz.com",
+    "mission": "Building Digital 2.0 with provable cybersecurity through trusted computing, blockchain, and cryptographic proof",
+    "legalName": "Rivetz Corp",
+    "founded": "2013",
+    "headquarters": "United States",
+    "sector": [
+      "Cybersecurity",
+      "Blockchain",
+      "Trusted Computing"
+    ],
+    "digitalName": "0x4153A197c252BFDDC1e1A8F7867F2fBC2FF092f5"
+  },
+  "coreConcepts": [
+    {
+      "term": "Digital 2.0",
+      "definition": "Rivetz's vision for a digital future built on verifiable trust, where every interaction has provable origin and integrity"
+    },
+    {
+      "term": "GAIN",
+      "definition": "Global Attestation and Identity Network — a framework combining trusted computing, blockchain, and tokenization for provable, tamper-proof digital interactions"
+    },
+    {
+      "term": "Attestation",
+      "definition": "Real-time integrity verification of devices and systems using hardware-based cryptographic proof (TPM, TEE, HSM)"
+    },
+    {
+      "term": "RvT Token",
+      "definition": "The utility token powering Digital 2.0 operations — used for device allowances, policy enforcement, service payments, and cross-chain operations"
+    },
+    {
+      "term": "Manifest of Controls",
+      "definition": "A cryptographically signed record of security controls, policies, and compliance verification that can be validated by any party"
+    },
+    {
+      "term": "Dual Roots of Trust",
+      "definition": "Patented technology developed with Telefonica combining two independent hardware security foundations for enhanced verification"
+    },
+    {
+      "term": "Digital Authority",
+      "definition": "A decentralized system for establishing, verifying, and managing digital identities and permissions using blockchain-anchored cryptographic proof"
+    },
+    {
+      "term": "Provable Device Origin",
+      "definition": "Hardware-based cryptographic attestation ensuring every device in the ecosystem is uniquely identifiable"
+    }
+  ],
+  "capabilities": {
+    "knowledge": {
+      "available": true,
+      "url": "/.well-known/ai/knowledge",
+      "auth": "none",
+      "rateLimit": "100/hour"
+    },
+    "feed": {
+      "available": false,
+      "url": "/.well-known/ai/feed",
+      "auth": "none",
+      "rateLimit": "100/hour"
+    },
+    "tools": {
+      "available": true,
+      "protocols": [
+        "rest"
+      ],
+      "toolCount": 0
+    }
+  },
+  "policies": {
+    "contentLicense": {
+      "type": "All Rights Reserved"
+    },
+    "aiPolicy": {
+      "url": "AI agents may reference Rivetz public content for informational purposes with attribution to rivetz.com",
+      "type": "aiPolicy"
+    }
+  },
+  "contact": {
+    "email": "contact@rivetz.com"
+  },
+  "pages": [
+    {
+      "path": "/",
+      "title": "Home — Building Digital 2.0 with Provable Cybersecurity"
+    },
+    {
+      "path": "/#about",
+      "title": "About Rivetz"
+    },
+    {
+      "path": "/#technology",
+      "title": "The Technology Behind Digital 2.0"
+    },
+    {
+      "path": "/#solutions",
+      "title": "Solutions — Certified AI, Secure Messaging, Device Integrity"
+    },
+    {
+      "path": "/#token",
+      "title": "RvT Token"
+    },
+    {
+      "path": "/#sec",
+      "title": "Rivetz and the SEC"
+    },
+    {
+      "path": "/#token-sale",
+      "title": "Utility Tokens: A Path Forward — Position Paper"
+    },
+    {
+      "path": "/#resources",
+      "title": "Resources — White Papers, Developer Docs"
+    },
+    {
+      "path": "/#whitepaper",
+      "title": "White Paper"
+    },
+    {
+      "path": "/#contact",
+      "title": "Contact"
+    }
+  ],
+  "generator": {
+    "name": "rootz-ai-discovery-generator",
+    "version": "1.0.0",
+    "url": "https://rootz.global/generate"
+  },
+  "_signature": {
+    "contentHash": "sha256:2c6c4741d3c93fe2cb969cd2ba7b758b77d1b9d4da8da4f518c2c0f710ae87a8",
+    "signedAt": "2026-03-04T16:29:44.413Z",
+    "method": "content-hash-only",
+    "authorization": "self-signed",
+    "signer": "0x4153A197c252BFDDC1e1A8F7867F2fBC2FF092f5",
+    "digitalName": "0x4153A197c252BFDDC1e1A8F7867F2fBC2FF092f5"
+  }
+}

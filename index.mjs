@@ -28,6 +28,22 @@ let main = async function() {
   // Health check
   app.get('/health', (req, res) => { res.status(200).send() });
 
+  // AI Discovery — /.well-known/ai endpoints
+  app.get('/.well-known/ai', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.set('Content-Type', 'application/json');
+    res.sendFile(resolve('./.well-known/ai/index.json'));
+  });
+  app.get('/.well-known/ai/knowledge', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.set('Content-Type', 'application/json');
+    res.sendFile(resolve('./.well-known/ai/knowledge.json'));
+  });
+  app.get('/llms.txt', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.sendFile(resolve('./llms.txt'));
+  });
+
   // Static assets
   app.use('/assets', express.static(resolve('./assets')));
   app.use('/pages', express.static(resolve('./pages')));

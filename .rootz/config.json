@@ -1,0 +1,44 @@
+{
+  "organization": {
+    "name": "Rivetz",
+    "domain": "rivetz.com",
+    "mission": "Building Digital 2.0 with provable cybersecurity through trusted computing, blockchain, and cryptographic proof",
+    "sector": ["Cybersecurity", "Blockchain", "Trusted Computing"],
+    "legalName": "Rivetz Corp",
+    "founded": "2013",
+    "headquarters": "United States"
+  },
+  "contact": {
+    "email": "contact@rivetz.com"
+  },
+  "coreConcepts": [
+    { "term": "Digital 2.0", "definition": "Rivetz's vision for a digital future built on verifiable trust, where every interaction has provable origin and integrity" },
+    { "term": "GAIN", "definition": "Global Attestation and Identity Network — a framework combining trusted computing, blockchain, and tokenization for provable, tamper-proof digital interactions" },
+    { "term": "Attestation", "definition": "Real-time integrity verification of devices and systems using hardware-based cryptographic proof (TPM, TEE, HSM)" },
+    { "term": "RvT Token", "definition": "The utility token powering Digital 2.0 operations — used for device allowances, policy enforcement, service payments, and cross-chain operations" },
+    { "term": "Manifest of Controls", "definition": "A cryptographically signed record of security controls, policies, and compliance verification that can be validated by any party" },
+    { "term": "Dual Roots of Trust", "definition": "Patented technology developed with Telefonica combining two independent hardware security foundations for enhanced verification" },
+    { "term": "Digital Authority", "definition": "A decentralized system for establishing, verifying, and managing digital identities and permissions using blockchain-anchored cryptographic proof" },
+    { "term": "Provable Device Origin", "definition": "Hardware-based cryptographic attestation ensuring every device in the ecosystem is uniquely identifiable" }
+  ],
+  "capabilities": {
+    "knowledge": { "available": true },
+    "feed": { "available": false }
+  },
+  "policies": {
+    "contentLicense": "All Rights Reserved",
+    "aiPolicy": "AI agents may reference Rivetz public content for informational purposes with attribution to rivetz.com"
+  },
+  "pages": [
+    { "path": "/", "title": "Home — Building Digital 2.0 with Provable Cybersecurity" },
+    { "path": "/#about", "title": "About Rivetz" },
+    { "path": "/#technology", "title": "The Technology Behind Digital 2.0" },
+    { "path": "/#solutions", "title": "Solutions — Certified AI, Secure Messaging, Device Integrity" },
+    { "path": "/#token", "title": "RvT Token" },
+    { "path": "/#sec", "title": "Rivetz and the SEC" },
+    { "path": "/#token-sale", "title": "Utility Tokens: A Path Forward — Position Paper" },
+    { "path": "/#resources", "title": "Resources — White Papers, Developer Docs" },
+    { "path": "/#whitepaper", "title": "White Paper" },
+    { "path": "/#contact", "title": "Contact" }
+  ]
+}

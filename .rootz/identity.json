@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "address": "0x4153A197c252BFDDC1e1A8F7867F2fBC2FF092f5",
+  "publicKey": "04055c67c7150ac7ffef05b625c266e06a33a05c036913d944ce29bfec4e6d4b2baeb164dde5d1a27abe412ac023bf3ca6d0db76a19ef33bb21573f90631c6de40",
+  "encrypted": {
+    "encrypted": "51e63f5618640cbea1e496f8dd86bf372c3eea22d98fbe071a956e8eb4da66ac9f1d4eaf1ba63227a0bf99738ca7a8f0",
+    "iv": "72deff444b4a96ce3f341973951e19a9",
+    "salt": "aeebb5a782d89fc97529565bccb5ac21"
+  },
+  "created": "2026-03-04T16:29:14.858Z",
+  "algorithm": "secp256k1",
+  "encryption": "aes-256-cbc",
+  "kdf": "pbkdf2-sha256-100000"
+}
