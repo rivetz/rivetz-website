@@ -20,10 +20,16 @@
       {
         "name": "RvT Token",
         "path": "#token"
-      },{
+      },
+      {
         "name": "SEC",
         "path": "#sec"
-      },{
+      },
+      {
+        "name": "Blog",
+        "path": "#blog"
+      },
+      {
         "name": "RvT Sale",
         "path": "#token-sale"
       },
@@ -44,73 +50,73 @@
   "footer": {
     "Company": [
       {
-        "name":"About Us",
+        "name": "About Us",
         "path": "#about"
       },
       {
-        "name":"Our Journey",
+        "name": "Our Journey",
         "path": "#"
       },
       {
-        "name":"Leadership",
+        "name": "Leadership",
         "path": "#"
       },
       {
-        "name":"Careers",
+        "name": "Careers",
         "path": "#"
       }
     ],
     "Technology": [
       {
-        "name":"GAIN Platform",
+        "name": "GAIN Platform",
         "path": "#"
       },
       {
-        "name":"Manifest of Controls",
+        "name": "Manifest of Controls",
         "path": "#"
       },
       {
-        "name":"Attestation",
+        "name": "Attestation",
         "path": "#"
       },
       {
-        "name":"Digital Authorities",
+        "name": "Digital Authorities",
         "path": "#"
       }
     ],
     "Solutions": [
       {
-        "name":"Certified AI",
+        "name": "Certified AI",
         "path": "#"
       },
       {
-        "name":"Secure Messaging",
+        "name": "Secure Messaging",
         "path": "#"
       },
       {
-        "name":"Social Media",
+        "name": "Social Media",
         "path": "#"
       },
       {
-        "name":"Device Integrity",
+        "name": "Device Integrity",
         "path": "#"
       }
     ],
     "Resources": [
       {
-        "name":"White Papers",
+        "name": "White Papers",
         "path": "#whitepaper"
       },
       {
-        "name":"Blog",
-        "path": "#"
+        "name": "Blog",
+        "path": "#blog"
       },
       {
-        "name":"Developer Docs",
+        "name": "Developer Docs",
         "path": "https://docs.rivetz.com"
       },
       {
-        "name":"RvT Token",
+        "name": "RvT Token",
         "path": "#token"
       }
     ]
