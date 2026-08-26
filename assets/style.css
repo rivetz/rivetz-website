@@ -49,6 +49,7 @@ header {
     height: 40px;
     display: flex;
     align-items: center;
+    flex-shrink: 0;   /* don't let the nav squeeze the logo — a global img{max-width:100%} would then crush its width and stretch the round mark into an ellipse */
 }
 
 .logo img {
