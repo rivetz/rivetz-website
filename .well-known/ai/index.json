@@ -2,7 +2,7 @@
   "specVersion": "1.2.0",
   "schemaVersion": "2026-02",
   "standard": "ai-discovery",
-  "generated": "2026-03-04T16:29:44.410Z",
+  "generated": "2026-08-25T00:00:00.000Z",
   "organization": {
     "name": "Rivetz",
     "domain": "rivetz.com",
@@ -110,6 +110,10 @@
       "title": "Rivetz and the SEC"
     },
     {
+      "path": "/#comment",
+      "title": "Comment on Regulation Crypto Assets — SEC File No. S7-2026-27"
+    },
+    {
       "path": "/#token-sale",
       "title": "Utility Tokens: A Path Forward — Position Paper"
     },
@@ -132,8 +136,8 @@
     "url": "https://rootz.global/generate"
   },
   "_signature": {
-    "contentHash": "sha256:2c6c4741d3c93fe2cb969cd2ba7b758b77d1b9d4da8da4f518c2c0f710ae87a8",
-    "signedAt": "2026-03-04T16:29:44.413Z",
+    "contentHash": "sha256:a6684ca0f0c39bf5291957edc27bf5d7d87de0b23a75da66cd3492ab35ed7827",
+    "signedAt": "2026-08-25T00:00:00.000Z",
     "method": "content-hash-only",
     "authorization": "self-signed",
     "signer": "0x4153A197c252BFDDC1e1A8F7867F2fBC2FF092f5",

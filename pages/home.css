@@ -1,0 +1,51 @@
+
+
+/* --- SEC rulemaking notice --- */
+
+.home-notice {
+    padding: 56px 20px;
+    background: var(--background);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.home-notice-content {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.home-notice-tag {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 5px 14px;
+    border: 1px solid var(--primary);
+    border-radius: 999px;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.home-notice h2 {
+    margin-bottom: 16px;
+    font-size: 32px;
+    color: var(--dark);
+}
+
+.home-notice p {
+    margin: 0 auto 26px;
+    max-width: 720px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--dark);
+}
+
+.home-notice .btn {
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+@media (max-width: 700px) {
+    .home-notice h2 { font-size: 25px; }
+}

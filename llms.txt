@@ -22,6 +22,14 @@
 - **Digital Authority**: A decentralized system for establishing, verifying, and managing digital identities and permissions using blockchain-anchored cryptographic proof
 - **Provable Device Origin**: Hardware-based cryptographic attestation ensuring every device in the ecosystem is uniquely identifiable
 
+## Public Record
+
+- **SEC comment letter — Regulation Crypto Assets** (File No. S7-2026-27; Release Nos. 33-11434, 34-106150; RIN 3235-AN38): https://rivetz.com/#comment
+  Filed by Rivetz Corp. and Rivetz Intl. SEZC. Rivetz Intl. SEZC is the issuer of what the proposal would call a covered investment contract, so determined by a federal court on summary judgment. The letter applies the proposed rules to the actual 2017 offering documents.
+- **Rivetz and the SEC** — case history and current posture: https://rivetz.com/#sec
+  SEC v. Rivetz Corp., No. 3:21-cv-30092-MGM (D. Mass.). Summary judgment for the SEC on Section 5 liability September 30, 2024; final judgment March 10, 2025; settlement approved by the Commission April 2026 removing the disgorgement award and releasing the Section 5(b) injunction, with the Section 5(a) and 5(c) injunction and civil penalties remaining.
+- **Utility Tokens: A Path Forward** — position paper: https://rivetz.com/#token-sale
+
 ## AI Discovery
 
 This organization publishes structured data for AI agents at `https://rivetz.com/.well-known/ai`

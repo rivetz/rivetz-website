@@ -30,7 +30,11 @@
         "path": "#blog"
       },
       {
-        "name": "RvT Sale",
+        "name": "Comment Letter",
+        "path": "#comment"
+      },
+      {
+        "name": "Token Policy",
         "path": "#token-sale"
       },
       {
@@ -55,51 +59,47 @@
       },
       {
         "name": "Our Journey",
-        "path": "#"
+        "path": "#about"
       },
       {
         "name": "Leadership",
-        "path": "#"
-      },
-      {
-        "name": "Careers",
-        "path": "#"
+        "path": "#about"
       }
     ],
     "Technology": [
       {
         "name": "GAIN Platform",
-        "path": "#"
+        "path": "#technology"
       },
       {
         "name": "Manifest of Controls",
-        "path": "#"
+        "path": "#technology"
       },
       {
         "name": "Attestation",
-        "path": "#"
+        "path": "#technology"
       },
       {
         "name": "Digital Authorities",
-        "path": "#"
+        "path": "#technology"
       }
     ],
     "Solutions": [
       {
         "name": "Certified AI",
-        "path": "#"
+        "path": "#solutions"
       },
       {
         "name": "Secure Messaging",
-        "path": "#"
+        "path": "#solutions"
       },
       {
         "name": "Social Media",
-        "path": "#"
+        "path": "#solutions"
       },
       {
         "name": "Device Integrity",
-        "path": "#"
+        "path": "#solutions"
       }
     ],
     "Resources": [
@@ -112,8 +112,12 @@
         "path": "#blog"
       },
       {
+        "name": "SEC Comment Letter",
+        "path": "#comment"
+      },
+      {
         "name": "Developer Docs",
-        "path": "https://docs.rivetz.com"
+        "path": "https://github.com/rivetz"
       },
       {
         "name": "RvT Token",

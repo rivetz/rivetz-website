@@ -110,10 +110,111 @@
     border: 2px solid var(--primary);
     color: var(--primary);
 }
-.paper-note {
+/* --- comment letter --- */
+
+.letter-file {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    opacity: 0.85;
+}
+
+.letter-standfirst {
     border-left: 4px solid var(--primary);
 }
 
-.paper-note p {
+.letter-standfirst p:last-child {
     margin-bottom: 0;
+}
+
+.letter-body {
+    line-height: 1.75;
+}
+
+.letter-body p {
+    margin-bottom: 18px;
+}
+
+.letter-body h3 {
+    margin-top: 44px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 26px;
+}
+
+.letter-body h4 {
+    margin-top: 34px;
+    margin-bottom: 14px;
+    font-size: 19px;
+    color: var(--primary);
+}
+
+.letter-body > *:first-child {
+    margin-top: 0;
+}
+
+.letter-body blockquote {
+    margin: 22px 0;
+    padding: 4px 0 4px 22px;
+    border-left: 3px solid var(--primary);
+    color: #52616F;
+    font-size: 16px;
+}
+
+.letter-body blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+.letter-body hr {
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    margin: 34px 0;
+}
+
+.letter-body code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.86em;
+    word-break: break-all;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 1px 5px;
+    border-radius: 4px;
+}
+
+.letterhead,
+.addressee,
+.re-line,
+.signature {
+    line-height: 1.5;
+}
+
+.letterhead {
+    margin-bottom: 26px;
+}
+
+.signature {
+    margin-top: 26px;
+}
+
+.footnote {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #52616F;
+}
+
+@media (max-width: 700px) {
+    .letter-body h3 { font-size: 22px; }
+    .letter-body h4 { font-size: 17px; }
+}
+
+.letter-dl {
+    margin-top: 22px;
+    margin-bottom: 0;
+}
+
+.letter-dl .btn {
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 11px 24px;
 }
