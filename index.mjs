@@ -1,89 +1,47 @@
+// rivetz-website — static presentation site, served as a harness MultiSite child.
+//
+// Harness (rootz-services) owns ports 80/443, terminates TLS via SNI, and proxies
+// by Host to this process on its assigned PORT. So this is display code only:
+// plain HTTP on PORT, a /health probe for harness, and the static pages. No own
+// TLS and no webhook — those belong to the front, not a per-site duplicate shell.
+
 import express from 'express';
-import http from 'http';
-import https from 'https';
 import { resolve } from 'path';
-import {fileURLToPath} from "url";
 import morgan from 'morgan';
-import fs from 'fs';
-import { Certify } from '../administrate/certify.mjs';
-import { Synchronize } from '../administrate/synchronize.mjs';
 
-let main = async function() {
-  let app = express();
-  app.use(morgan('dev'));
+const root = import.meta.dirname;
+const app = express();
+app.use(morgan('dev'));
 
-  const http_port = parseInt(process.env.PORT || 4080);
-  const https_port = parseInt(process.env.PORTSSL || 4443);
+// Harness health probe (GET 127.0.0.1:PORT/health)
+app.get('/health', (req, res) => res.status(200).send('ok'));
 
-  // Initialize Certify for SSL certificate management
-  const certify = await Certify.attach(app, {
-    contactEmail: process.env.CONTACT_EMAIL || 'admin@rootz.global'
-  });
-
-  // Initialize Synchronize for GitHub webhook auto-updates
-  if (process.env.PROFILE !== 'DEV') {
-    const branch = await Synchronize.ActiveBranch();
-    Synchronize.attach(app, process.env.SYNC_BRANCH || branch);
-  }
-  // Health check
-  app.get('/health', (req, res) => { res.status(200).send() });
-
-  // AI Discovery — /.well-known/ai endpoints
-  app.get('/.well-known/ai', (req, res) => {
-    res.set('Access-Control-Allow-Origin', '*');
-    res.set('Content-Type', 'application/json');
-    res.sendFile(resolve('./.well-known/ai/index.json'));
-  });
-  app.get('/.well-known/ai/knowledge', (req, res) => {
-    res.set('Access-Control-Allow-Origin', '*');
-    res.set('Content-Type', 'application/json');
-    res.sendFile(resolve('./.well-known/ai/knowledge.json'));
-  });
-  app.get('/llms.txt', (req, res) => {
-    res.set('Access-Control-Allow-Origin', '*');
-    res.sendFile(resolve('./llms.txt'));
-  });
-
-  // Static assets
-  app.use('/assets', express.static(resolve('./assets')));
-  app.use('/pages', express.static(resolve('./pages')));
-  app.use('/images', express.static(resolve('./images')));
-
-  // Dynamic routing for pages
-  app.get('/', (req, res) => {
-    res.sendFile(resolve('./index.html'));
-  });
-
-  app.get('/manifest.json', (req, res) => {
-    res.sendFile(resolve('./manifest.json'));
-  });
-
-  // Serve favicon
-  app.get('/favicon.ico', (req, res) => {
-    res.sendFile(resolve('./favicon.ico'));
-  });
-
-
-  // Create HTTPS server with SNI callback for dynamic SSL certificates
-  const https_server = https.createServer({...certify.SNI}, app);
-  https_server.listen(https_port);
-  https_server.on('error', console.error);
-  https_server.on('listening', () => {
-    let address = https_server.address();
-    console.log(`HTTPS Server listening on ${address.address} ${address.port} (${address.family})`);
-  });
-
-  // Create HTTP server (for redirects and ACME challenges)
-  const http_server = http.createServer(app);
-  http_server.listen(http_port);
-  http_server.on('error', console.error);
-  http_server.on('listening', () => {
-    let address = http_server.address();
-    console.log(`HTTP Server listening on ${address.address} ${address.port} (${address.family})`);
-  });
-}();
-
-process.on('SIGINT', function() {
-  console.log("Shutting down");
-  process.exit();
+// AI Discovery — /.well-known/ai + llms.txt
+app.get('/.well-known/ai', (req, res) => {
+  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Content-Type', 'application/json');
+  res.sendFile(resolve(root, '.well-known/ai/index.json'), { dotfiles: 'allow' });
 });
+app.get('/.well-known/ai/knowledge', (req, res) => {
+  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Content-Type', 'application/json');
+  res.sendFile(resolve(root, '.well-known/ai/knowledge.json'), { dotfiles: 'allow' });
+});
+app.get('/llms.txt', (req, res) => {
+  res.set('Access-Control-Allow-Origin', '*');
+  res.sendFile(resolve(root, 'llms.txt'));
+});
+
+// Static assets + pages
+app.use('/assets', express.static(resolve(root, 'assets')));
+app.use('/pages', express.static(resolve(root, 'pages')));
+app.use('/images', express.static(resolve(root, 'images')));
+app.get('/', (req, res) => res.sendFile(resolve(root, 'index.html')));
+app.get('/manifest.json', (req, res) => res.sendFile(resolve(root, 'manifest.json')));
+app.get('/favicon.ico', (req, res) => res.sendFile(resolve(root, 'favicon.ico')));
+
+const port = parseInt(process.env.PORT || 4080);
+app.listen(port, () => console.log(`rivetz-website listening on :${port}`));
+
+process.on('SIGTERM', () => { console.log('Shutting down'); process.exit(0); });
+process.on('SIGINT', () => { console.log('Shutting down'); process.exit(0); });
