@@ -132,5 +132,59 @@
         "path": "#token"
       }
     ]
+  },
+  "pages": {
+    "home": {
+      "title": "Rivetz — Building Digital 2.0 with Provable Cybersecurity",
+      "description": "Rivetz builds provable cybersecurity for Digital 2.0 — attestation, digital authorities and a manifest of controls."
+    },
+    "rules": {
+      "title": "Rules Do Not Change Laws",
+      "description": "Follow the SEC's new crypto framework exactly and you will produce a token offering that meets the case-law definition of a security — and the rescission risk that creates is not the SEC's to call off."
+    },
+    "blog": {
+      "title": "If Rivetz Launched Today, Is It a Security?",
+      "description": "The SEC's new crypto taxonomy contradicts its own case law. A first-hand account from a defendant in the enforcement campaign."
+    },
+    "sec": {
+      "title": "SEC v. Rivetz — The Case",
+      "description": "The record, the ruling, and what SEC v. Rivetz established about utility tokens under Howey."
+    },
+    "comment": {
+      "title": "Rivetz Comment Letter — SEC File No. S7-2026-27",
+      "description": "Rivetz Corp. and Rivetz Intl. SEZC on the proposed Regulation Crypto Assets."
+    },
+    "about": {
+      "title": "About Rivetz",
+      "description": "Who we are and how we got here."
+    },
+    "technology": {
+      "title": "Rivetz Technology — Attestation and the Manifest of Controls",
+      "description": "The GAIN platform, digital authorities, and measured execution."
+    },
+    "solutions": {
+      "title": "Rivetz Solutions",
+      "description": "Certified AI, secure messaging, device integrity."
+    },
+    "token": {
+      "title": "The RvT Token",
+      "description": "What the RvT token is and what it does."
+    },
+    "token-sale": {
+      "title": "Rivetz Token Policy",
+      "description": "Rivetz policy on token sales and distribution."
+    },
+    "resources": {
+      "title": "Rivetz Resources",
+      "description": "White papers, filings and developer documentation."
+    },
+    "whitepaper": {
+      "title": "Rivetz White Paper",
+      "description": "The Rivetz technical white paper."
+    },
+    "contact": {
+      "title": "Contact Rivetz",
+      "description": "Get in touch with Rivetz."
+    }
   }
 }

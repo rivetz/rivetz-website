@@ -8,7 +8,14 @@ class Main {
             let currentPage = this.page;
             this.parsePath(e.newURL);
             if (this.page !== currentPage) await this.drawBody();
-            if (!this.anchor) window.scrollTo(0,0);
+            if (!this.anchor) {
+                window.scrollTo(0,0);
+                try {
+                    let clean = this.page === 'home' ? '/' : '/' + this.page;
+                    if (document.location.pathname !== clean)
+                        history.replaceState(null, '', clean);
+                } catch(e) {}
+            }
         });
         
         // Add mobile menu toggle functionality
@@ -92,14 +99,29 @@ class Main {
         } catch(e) {}
         
         this.bodyElement.innerHTML = pageStyle+'\n'+pageBody;
+
+        // Keep the tab title in step with client-side navigation. The server sets
+        // it on first load; this covers every hop after that.
+        let pageMeta = (this.manifest && this.manifest.pages) ? this.manifest.pages[this.page] : null;
+        if (pageMeta && pageMeta.title) document.title = pageMeta.title;
         
         if (this.anchor) document.location.href = '#'+this.hash;
+    }
+
+    // Which page to draw. A hash wins when present (in-page nav). Otherwise the
+    // page came from a clean server-rendered URL like /rules — take it from the
+    // meta tag the server injected, falling back to the path itself.
+    serverPage() {
+        let tag = document.querySelector('meta[name="rivetz-page"]');
+        if (tag && tag.content) return tag.content;
+        let seg = (document.location.pathname || '/').split('/').filter(Boolean)[0];
+        return seg || 'home';
     }
 
     parsePath(location = '') {
         this.hash = location.split('#')[1];
         if (!this.hash || this.hash === '') {
-            this.page = "home";
+            this.page = this.serverPage();
             this.anchor = '';
         } else {
             let match = this.hash.match(/^([A-Za-z0-9-_]*)(?:\.)?(.*)?/);
