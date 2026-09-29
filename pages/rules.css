@@ -1,0 +1,147 @@
+.blog-article {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.blog-article .meta {
+    color: var(--gray);
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.blog-article .lede {
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.blog-article .lede strong {
+    font-style: normal;
+    color: var(--dark);
+}
+
+.blog-article h2 {
+    font-size: 28px;
+    color: var(--primary);
+    margin: 50px 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--primary);
+}
+
+.blog-article h3 {
+    font-size: 22px;
+    color: var(--dark);
+    margin: 30px 0 15px;
+}
+
+.blog-article p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.blog-article ul, .blog-article ol {
+    margin: 15px 0 25px 30px;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.blog-article li {
+    margin-bottom: 8px;
+}
+
+.blog-article blockquote {
+    border-left: 4px solid var(--primary);
+    margin: 30px 0;
+    padding: 15px 25px;
+    background: rgba(242,106,48,0.05);
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.blog-article strong {
+    color: var(--dark);
+}
+
+.blog-article .highlight {
+    background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+    color: var(--light);
+    padding: 30px;
+    border-radius: 8px;
+    margin: 30px 0;
+}
+
+.blog-article table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 15px;
+}
+
+.blog-article th {
+    background: var(--dark);
+    color: var(--light);
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.blog-article td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.blog-article tr:nth-child(even) td {
+    background: #f9f9f9;
+}
+
+.blog-article hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 40px 0;
+}
+
+.blog-article .bio {
+    font-style: italic;
+    font-size: 15px;
+    color: var(--gray);
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.blog-article .references {
+    font-size: 14px;
+    color: var(--gray);
+    margin-top: 30px;
+}
+
+.blog-article .references strong {
+    color: var(--dark);
+    font-size: 15px;
+}
+
+.blog-article .references ul {
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+.blog-article code {
+    background: rgba(0,0,0,0.05);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.blog-article a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.blog-article a:hover {
+    text-decoration: underline;
+}

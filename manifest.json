@@ -26,6 +26,10 @@
         "path": "#sec"
       },
       {
+        "name": "Rules vs Laws",
+        "path": "#rules"
+      },
+      {
         "name": "Blog",
         "path": "#blog"
       },
@@ -103,6 +107,10 @@
       }
     ],
     "Resources": [
+      {
+        "name": "Rules Do Not Change Laws",
+        "path": "#rules"
+      },
       {
         "name": "White Papers",
         "path": "#whitepaper"
