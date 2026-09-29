@@ -75,6 +75,21 @@
     margin: 30px 0;
 }
 
+/* .blog-article strong sets color:var(--dark), which is #2C3E50 — the exact
+   colour this box's gradient starts at. Bold text inside a highlight therefore
+   renders invisible against its own background. Restore the box's own colour
+   for every inline element that would otherwise inherit the page default. */
+.blog-article .highlight strong,
+.blog-article .highlight em,
+.blog-article .highlight code {
+    color: var(--light);
+}
+
+.blog-article .highlight a {
+    color: var(--light);
+    text-decoration: underline;
+}
+
 .blog-article table {
     width: 100%;
     border-collapse: collapse;
